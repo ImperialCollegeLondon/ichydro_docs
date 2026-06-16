@@ -1,0 +1,61 @@
+site_name: ICHydro documentation (EN)
+
+docs_dir: "../../docs/en" # Where to find the English markdown files
+site_dir: "../../site/en" # Where to put the English HTML files
+
+hooks:
+  - main.py
+
+plugins:
+  - search:
+      lang: en # Set language for search
+  - section-index
+  - glightbox
+  - caption:
+      figure:
+        ignore_classes: ["no-caption"]
+  - multirepo:
+      cleanup: true
+      temp_dir: .temp-en
+      keep_docs_dir: false
+      nav_repos:
+        - name: paricia-extra-imports 
+          import_url: https://github.com/ImperialCollegeLondon/paricia?branch=main
+          imports: [
+            /README.md, /CONTRIBUTING.md
+          ]
+
+markdown_extensions:
+  - admonition
+  - pymdownx.snippets:
+      check_paths: true
+  - toc:
+      permalink: "¤"
+  - markdown_include.include:
+      base_path: .
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra: # Language Selection
+  alternate:
+    # Switch to English
+    - name: English
+      link: /ichydro-docs/en/
+      lang: en
+    # Switch to Spanish
+    - name: Español
+      link: /ichydro-docs/es/
+      lang: es
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+
+nav:
+  - Home: index.md
+  - Paricia: '!import https://github.com/ImperialCollegeLondon/paricia?branch=main&extra_imports=["overrides/*"]&docs_dir=docs/en/&config=config/en/mkdocs.yml'
+  - Riverlabs: '!import https://github.com/ICHydro/Riverlabs?branch=migrate-docs&extra_imports=["overrides/*"]&docs_dir=docs/en/&config=config/en/mkdocs.yml'
