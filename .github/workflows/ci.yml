@@ -1,0 +1,28 @@
+name: CI ICHydro docs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  test-docs:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+          prune-cache: false
+          activate-environment: true
+          python-version: 3.14
+      - name: Install dependencies
+        run: uv sync
+      - name: Test the docs built correctly
+        run: |
+          mkdocs build -f config/en/mkdocs.yml
+          mkdocs build -f config/es/mkdocs.yml
