@@ -1,0 +1,1 @@
+Para consultar la referencia de la API, consulte la [documentación fuente de Paricia](https://imperialcollegelondon.github.io/paricia/es/).
