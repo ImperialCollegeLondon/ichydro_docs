@@ -1,5 +1,6 @@
 site_name: ICHydro documentation (ES)
 
+repo_url: https://github.com/stephwills/ichydro_docs
 docs_dir: "../../docs/es" # Where to find the Spanish markdown files
 site_dir: "../../site/es" # Where to put the Spanish HTML files
 
@@ -37,11 +38,11 @@ extra: # Language Selection
   alternate:
     # Switch to English
     - name: English
-      link: /ichydro-docs/en/
+      link: /ichydro_docs/en/
       lang: en
     # Switch to Spanish
     - name: Español
-      link: /ichydro-docs/es/
+      link: /ichydro_docs/es/
       lang: es
 
 theme:
