@@ -1,0 +1,3465 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/ichydro_docs/en/" hreflang="en">
+        
+          <link rel="alternate" href="/ichydro_docs/es/" hreflang="es">
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Common Issues and Solutions - ICHydro documentation (EN)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#common-issues-and-solutions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="ICHydro documentation (EN)" class="md-header__button md-logo" aria-label="ICHydro documentation (EN)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ICHydro documentation (EN)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Common Issues and Solutions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/ichydro_docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/ichydro_docs/es/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/stephwills/ichydro_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../paricia/" class="md-tabs__link">
+          
+  
+  
+  Paricia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../quick-start/quick-start/" class="md-tabs__link">
+          
+  
+  
+  Riverlabs
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="ICHydro documentation (EN)" class="md-nav__button md-logo" aria-label="ICHydro documentation (EN)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    ICHydro documentation (EN)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/stephwills/ichydro_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paricia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Paricia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/adding_elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding elements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/importing_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importing Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/quality_assurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality assurance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/synthetic_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthetic data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code structure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Code structure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/Applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/Applications/formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/Applications/variable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/Applications/sensor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/Applications/station/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/Applications/measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/Applications/importing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../paricia/reference" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Riverlabs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Riverlabs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quick Start
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/data-download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/arduino-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick-start/first-deployment-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/technical-specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/battery-power-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battery &amp; Power Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/data-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagnostic-flowcharts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnostic Flowcharts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/sensor-positioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor Positioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/mounting-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mounting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/environmental-considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environmental Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming/arduino-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../programming/uploading-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uploading Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#how-to-use-this-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Use This Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-power-and-battery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category: Power and Battery
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category: Power and Battery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-1-logger-wont-power-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 1: Logger Won't Power On
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-2-battery-drains-overnight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 2: Battery Drains Overnight
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-3-battery-percentage-seems-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 3: Battery Percentage Seems Wrong
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-sensor-and-data-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category: Sensor and Data Quality
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category: Sensor and Data Quality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-4-ultrasonic-sensor-reads-max-range-constantly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 4: Ultrasonic Sensor Reads Max Range Constantly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-5-distance-readings-drift-over-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 5: Distance Readings Drift Over Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-6-lidar-returns-negative-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 6: Lidar Returns Negative Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-sd-card-and-data-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category: SD Card and Data Logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category: SD Card and Data Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-7-sd-card-shows-corrupt-or-needs-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 7: SD Card Shows "Corrupt" or "Needs Formatting"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-8-csv-file-has-weird-characters-or-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 8: CSV File Has Weird Characters or Formatting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-telemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category: Telemetry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category: Telemetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-9-thingsboard-shows-old-data-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 9: ThingsBoard Shows Old Data Only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-10-telemetry-works-intermittently" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 10: Telemetry Works Intermittently
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#category-arduino-and-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Category: Arduino and Firmware
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Category: Arduino and Firmware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-11-upload-fails-programmer-is-not-responding-or-avrdude-stk500_getsync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 11: Upload Fails "programmer is not responding" or "avrdude: stk500_getsync()"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-12-upload-fails-serial-port-already-in-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 12: Upload Fails "Serial Port Already in Use"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-13-sketch-compiles-but-logger-does-nothing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 13: Sketch Compiles but Logger Does Nothing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-14-compilation-errors-missing-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 14: Compilation Errors - Missing Libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#still-stuck" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Still Stuck?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="common-issues-and-solutions">Common Issues and Solutions<a class="headerlink" href="#common-issues-and-solutions" title="Permanent link">¤</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>Comprehensive reference of frequently encountered problems with Riverlabs loggers. Symptom → Cause → Solution format for quick troubleshooting.</p>
+</div>
+<h2 id="how-to-use-this-guide">How to Use This Guide<a class="headerlink" href="#how-to-use-this-guide" title="Permanent link">¤</a></h2>
+<ol>
+<li><strong>Scan symptoms</strong> to find your issue</li>
+<li><strong>Read likely causes</strong> to understand why</li>
+<li><strong>Follow solution steps</strong> to fix</li>
+<li><strong>Check "Verified by"</strong> for real-world confirmation</li>
+</ol>
+<p>Each issue includes:
+- 🔴 <strong>Symptom</strong> - What you observe
+- 🔍 <strong>Likely Cause</strong> - Why it happens
+- ✅ <strong>Solution</strong> - How to fix
+- ⚙️ <strong>Prevention</strong> - How to avoid in future</p>
+<hr>
+<h2 id="category-power-and-battery">Category: Power and Battery<a class="headerlink" href="#category-power-and-battery" title="Permanent link">¤</a></h2>
+<h3 id="issue-1-logger-wont-power-on">Issue 1: Logger Won't Power On<a class="headerlink" href="#issue-1-logger-wont-power-on" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- No LED activity when power switch ON
+- Logger appears completely dead
+- No serial output</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>Battery completely discharged</strong> (&lt;2.5V)
+2. <strong>Battery disconnected</strong> or poor contact
+3. <strong>Reverse polarity</strong> (battery connected backward)
+4. <strong>Power switch failure</strong> (mechanical)
+5. <strong>PCB damage</strong> (component failure, trace damage)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Check battery voltage</strong></p>
+<ul>
+<li>Disconnect battery from logger</li>
+<li>Measure with multimeter: Red probe to red wire, black to black</li>
+<li>Reading:<ul>
+<li>3.7-4.2V: Battery good → issue is in logger (go to Step 3)</li>
+<li>2.5-3.5V: Battery discharged → charge/replace, retest</li>
+<li>&lt;2.5V: Battery dead → replace (likely won't accept charge)</li>
+<li>0V: No battery or complete failure → replace</li>
+</ul>
+</li>
+</ul>
+<p><strong>Step 2: Inspect battery connector</strong></p>
+<ul>
+<li>JST connector properly inserted?</li>
+<li>Pins making contact? (wiggle gently, does it power on intermittently?)</li>
+<li>Correct polarity? (Red wire to + pad on PCB, black to -)</li>
+<li>If backward: IMMEDIATELY disconnect! Check for damage (burned components, smell)</li>
+</ul>
+<p><strong>Step 3: Test power switch</strong></p>
+<ul>
+<li>Toggle switch multiple times (may be dirty contacts)</li>
+<li>If available: Bypass switch (temporary wire across switch terminals) for testing</li>
+<li>Switch broken? Desolder and replace, or permanently bypass</li>
+</ul>
+<p><strong>Step 4: Check for PCB damage</strong></p>
+<ul>
+<li>Visual inspection: burned components? broken traces?</li>
+<li>Smell: burnt electronics smell?</li>
+<li>Voltage regulator hot when battery connected? (regulator failure)</li>
+<li>If PCB damaged: Professional repair or logger replacement</li>
+</ul>
+<p><strong>⚙️ Prevention:</strong>
+- Monitor battery voltage, replace before &lt;3.3V
+- Use JST connectors (keyed, prevents reverse polarity)
+- Protect logger from physical damage (good enclosure)
+- Don't short circuit battery (causes permanent damage)</p>
+<hr>
+<h3 id="issue-2-battery-drains-overnight">Issue 2: Battery Drains Overnight<a class="headerlink" href="#issue-2-battery-drains-overnight" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Battery fully charged, installed in evening
+- Next morning: Battery dead or very low
+- Logger may have logged a few samples or none</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>Sleep mode not functioning</strong> (logger running continuously)
+2. <strong>Telemetry stuck trying to connect</strong> (XBee never sleeps)
+3. <strong>Firmware bug</strong> (sleep never triggered)
+4. <strong>Short circuit</strong> (hardware fault)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Verify sleep mode in code</strong></p>
+<pre><code class="language-cpp">// In main loop, should have:
+LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);
+// Or similar sleep command
+
+// For XBee:
+pinMode(XBEE_SLEEP_PIN, OUTPUT);
+digitalWrite(XBEE_SLEEP_PIN, HIGH); // Sleep XBee when not transmitting
+</code></pre>
+<p><strong>Step 2: Measure current draw</strong></p>
+<ul>
+<li>Equipment needed: Multimeter with current measurement (mA mode)</li>
+<li>Disconnect battery, connect ammeter in series</li>
+<li>Power on logger</li>
+<li>Observe current:<ul>
+<li>Sleep: &lt;1 mA (good)</li>
+<li>Active/measuring: 50-100 mA (normal, brief)</li>
+<li>Continuous &gt;50 mA: Not sleeping! (problem)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Step 3: Check serial debug output</strong></p>
+<ul>
+<li>Connect FTDI cable</li>
+<li>Open Serial Monitor</li>
+<li>Watch for:<ul>
+<li>"Entering sleep" messages? (if not, sleep not triggered)</li>
+<li>"XBee timeout" or similar? (stuck waiting for XBee)</li>
+<li>Continuous output? (should be periodic, not constant)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Step 4: Isolate telemetry</strong></p>
+<p>If logger has XBee:</p>
+<ul>
+<li>Remove XBee module</li>
+<li>Test overnight with SD-only logging</li>
+<li>If battery life good now: XBee configuration issue (SM not set to pin sleep)</li>
+<li>If battery still drains: Issue is in logger code/hardware</li>
+</ul>
+<p><strong>⚙️ Prevention:</strong>
+- Test battery life in bench setup (overnight) before field deployment
+- Enable debug output to verify sleep
+- Use XBee pin sleep mode (SM=1)
+- Measure current draw with ammeter during development</p>
+<hr>
+<h3 id="issue-3-battery-percentage-seems-wrong">Issue 3: Battery Percentage Seems Wrong<a class="headerlink" href="#issue-3-battery-percentage-seems-wrong" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Logger reports 50% battery
+- Next reading: 10% or dead
+- Or: Reports 80% for days, then suddenly dies</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>LiPo voltage curve</strong> (non-linear discharge)
+2. <strong>Cold temperatures</strong> (voltage sag)
+3. <strong>Old battery</strong> (capacity faded)
+4. <strong>Voltage measurement error</strong> (ADC inaccuracy)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Understanding LiPo discharge:</strong></p>
+<pre><code>LiPo batteries hold voltage until near end of life:
+
+Voltage   Approximate Remaining %
+4.2V      100%
+4.0V      80%
+3.9V      60%
+3.8V      40%
+3.7V      30%
+3.6V      20%
+3.5V      10%
+3.4V      5%
+3.3V      1% (emergency, retrieve logger!)
+&lt;3.3V     Damage risk
+</code></pre>
+<p><strong>Note:</strong> Percentage is non-linear and temperature/load dependent.</p>
+<p><strong>Step 1: Use voltage thresholds, not percentage</strong></p>
+<p>Instead of:  "Battery at 50%"
+Use:         "Battery voltage: 3.7V" (more accurate)</p>
+<p>Alert thresholds:</p>
+<ul>
+<li>3.5V: Plan retrieval in next week</li>
+<li>3.4V: Retrieve within 2 days</li>
+<li>3.3V: Retrieve immediately (may not transmit)</li>
+</ul>
+<p><strong>Step 2: Temperature compensation</strong></p>
+<p>Cold weather causes temporary voltage drop:</p>
+<ul>
+<li>Measured voltage may read 3.5V in 0°C</li>
+<li>Actual capacity may be higher (warms up → voltage recovers)</li>
+<li>Don't panic on single low reading in cold</li>
+<li>Retrieve if multiple consecutive readings &lt;3.4V</li>
+</ul>
+<p><strong>Step 3: Battery aging</strong></p>
+<p>LiPo batteries degrade over time:</p>
+<ul>
+<li>New: Full 2600 mAh capacity</li>
+<li>1 year: ~90% capacity (2340 mAh)</li>
+<li>2 years: ~80% capacity (2080 mAh)</li>
+<li>3+ years: &lt;70% capacity, replace</li>
+</ul>
+<p>Solution: Replace batteries annually for critical deployments</p>
+<p><strong>⚙️ Prevention:</strong>
+- Set alerts based on voltage, not percentage
+- Replace batteries yearly
+- Retrieve loggers before voltage critical
+- Store spare batteries properly (40-60% charge, cool location)</p>
+<hr>
+<h2 id="category-sensor-and-data-quality">Category: Sensor and Data Quality<a class="headerlink" href="#category-sensor-and-data-quality" title="Permanent link">¤</a></h2>
+<h3 id="issue-4-ultrasonic-sensor-reads-max-range-constantly">Issue 4: Ultrasonic Sensor Reads Max Range Constantly<a class="headerlink" href="#issue-4-ultrasonic-sensor-reads-max-range-constantly" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Wari logger always reads 5000mm (or max range)
+- Value never changes, even when moving sensor</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>No echo returned</strong> (no target, or target too absorbent)
+2. <strong>Sensor not powered</strong> (cable disconnected)
+3. <strong>Sensor aimed wrong</strong> (pointing at sky or ground)
+4. <strong>Sensor failed</strong> (rare)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Check for sensor clicking</strong></p>
+<ul>
+<li>Power on logger</li>
+<li>Hold sensor near ear (carefully, don't touch face)</li>
+<li>Should hear: "tick" or "click" each measurement (every 15 sec or your interval)</li>
+<li>Clicking: Sensor powered and transmitting → go to Step 2</li>
+<li>Not clicking: Sensor not powered → go to Step 3</li>
+</ul>
+<p><strong>Step 2: Sensor powered but no echo</strong></p>
+<p>Causes of no echo:</p>
+<ol>
+<li>
+<p>No target in beam path</p>
+<ul>
+<li>Too far: Move closer or use Lidar</li>
+<li>Aimed at sky: Re-aim toward target</li>
+</ul>
+</li>
+<li>
+<p>Target too absorbent</p>
+<ul>
+<li>Snow (fresh powder): Very absorbent</li>
+<li>Foam: Absorbs ultrasound</li>
+<li>Solution: Wait for snow to melt, or use Lidar</li>
+</ul>
+</li>
+<li>
+<p>Beam width too narrow, missing target</p>
+<ul>
+<li>Ultrasound beam: ~15-20° cone</li>
+<li>Small target (e.g., thin stream): May miss</li>
+<li>Solution: Aim more carefully, or use wider beam sensor</li>
+</ul>
+</li>
+</ol>
+<p><strong>Step 3: Sensor not powered</strong></p>
+<ul>
+<li>Disconnect sensor cable from logger</li>
+<li>Check continuity:<ul>
+<li>Cable pins to connector: Should have &lt;1Ω resistance</li>
+<li>Cable damaged? (crushed, cut, corroded): Replace cable</li>
+</ul>
+</li>
+<li>Check PCB connector:<ul>
+<li>Solder joints intact? (visual inspection)</li>
+<li>Pins making contact? (try re-seating cable)</li>
+</ul>
+</li>
+<li>Test with multimeter:<ul>
+<li>Measure voltage at sensor connector when logger active</li>
+<li>Should see 5V or 12V (depending on sensor model)</li>
+<li>No voltage: Power circuit failure on PCB</li>
+</ul>
+</li>
+</ul>
+<p><strong>Step 4: Sensor replacement</strong></p>
+<p>If all else fails:</p>
+<ul>
+<li>Sensor may be internally failed (rare but possible)</li>
+<li>Test: Swap sensor with known-good unit</li>
+<li>If new sensor works: Original sensor dead</li>
+<li>If new sensor also reads max range: Issue is aiming/target/environment, not sensor</li>
+</ul>
+<p><strong>⚙️ Prevention:</strong>
+- Careful aiming during installation (test before leaving site)
+- Protect cable from damage (secure routing, avoid pinch points)
+- Choose appropriate sensor for target material (Lidar for snow/foam)
+- Keep sensor face clean (dust/debris can block ultrasound)</p>
+<hr>
+<h3 id="issue-5-distance-readings-drift-over-time">Issue 5: Distance Readings Drift Over Time<a class="headerlink" href="#issue-5-distance-readings-drift-over-time" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Distance values change by 50-200mm over days
+- But actual water level is stable (verified visually)
+- Slow drift, not sudden jumps</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>Temperature changes</strong> (sensor mounting expands/contracts)
+2. <strong>Vegetation growth</strong> (beam obstruction)
+3. <strong>Mounting loosening</strong> (screws, zip ties)
+4. <strong>Sensor calibration drift</strong> (rare)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Check temperature correlation</strong></p>
+<ul>
+<li>Plot distance vs. temperature over time</li>
+<li>If strong correlation (distance increases when temp increases):<ul>
+<li>Cause: Mounting structure expanding with heat</li>
+<li>Example: Metal mounting heats in sun, expands, sensor moves 5mm down</li>
+<li>Solution: <ul>
+<li>a) Accept as natural variation (±50mm usually acceptable)</li>
+<li>b) Use thermally stable mounting (minimize metal)</li>
+<li>c) Temperature-compensate in post-processing</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Step 2: Inspect mounting</strong></p>
+<ul>
+<li>Visual inspection of logger installation</li>
+<li>Check:<ul>
+<li>Zip ties tight? (may loosen over time)</li>
+<li>Screws/bolts tight?</li>
+<li>Mounting bracket bent or moved?</li>
+</ul>
+</li>
+<li>Solution: Re-tighten, reinforce mounting</li>
+</ul>
+<p><strong>Step 3: Check for vegetation</strong></p>
+<ul>
+<li>Inspect beam path</li>
+<li>Growing vegetation? (grass, weeds, branches)<ul>
+<li>New leaves in spring?</li>
+<li>Algae growing on target surface?</li>
+</ul>
+</li>
+<li>Solution: Trim vegetation, clean target</li>
+<li>Prevention: Install with clear beam path, anticipate seasonal growth</li>
+</ul>
+<p><strong>Step 4: Sensor calibration check</strong></p>
+<p>Rarely needed, but to verify:</p>
+<ul>
+<li>Measure known distance with tape measure (e.g., 2000mm)</li>
+<li>Place target at that distance</li>
+<li>Logger reading should match ±50mm</li>
+<li>If off by &gt;100mm: Sensor may need replacement</li>
+</ul>
+<p><strong>⚙️ Prevention:</strong>
+- Use thermally stable mounting materials
+- Maintain clear beam path (quarterly trim vegetation)
+- Secure mounting with redundant fasteners
+- Account for seasonal expansion/contraction in data analysis</p>
+<hr>
+<h3 id="issue-6-lidar-returns-negative-values">Issue 6: Lidar Returns Negative Values<a class="headerlink" href="#issue-6-lidar-returns-negative-values" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Lidar logger occasionally records negative distances (e.g., -150mm)
+- Most readings are positive and correct</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>I2C communication error</strong> (data corruption)
+2. <strong>Timeout interpreted as negative</strong> (code bug)
+3. <strong>Integer overflow</strong> (math error in code)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Check for pattern</strong></p>
+<ul>
+<li>When do negatives occur?<ul>
+<li>Randomly: I2C error (go to Step 2)</li>
+<li>All readings after certain value: Overflow (go to Step 3)</li>
+<li>During/after transmission: XBee interfering with I2C (go to Step 4)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Step 2: I2C communication reliability</strong></p>
+<p>I2C is sensitive to:</p>
+<ul>
+<li>Wire length (keep &lt;30cm)</li>
+<li>Interference (EMI from nearby sources)</li>
+<li>Poor connections (loose wires)</li>
+</ul>
+<p>Solutions:</p>
+<ul>
+<li>a) Add pull-up resistors (2.2kΩ or 4.7kΩ on SDA and SCL)</li>
+<li>b) Shorten I2C wires</li>
+<li>c) Add ferrite bead on cable</li>
+<li>d) Shield cable if near strong RF source</li>
+</ul>
+<p><strong>Step 3: Code bug - overflow</strong></p>
+<pre><code class="language-cpp">// Bad code (potential overflow):
+int distance = lidar.read(); // int = -32768 to 32767
+// If actual distance &gt; 32767mm, overflows to negative
+
+// Good code:
+unsigned int distance = lidar.read(); // unsigned = 0 to 65535
+// Or:
+long distance = lidar.read(); // long = much larger range
+</code></pre>
+<p><strong>Step 4: XBee interference</strong></p>
+<p>If negatives occur during/after telemetry:</p>
+<ul>
+<li>XBee transmission may cause EMI</li>
+<li>Solution:<ul>
+<li>a) Separate I2C wires from XBee antenna</li>
+<li>b) Measure before transmission (not during)</li>
+<li>c) Add I2C pull-ups (improves signal integrity)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Step 5: Filter in post-processing</strong></p>
+<p>As a last resort (if hardware fixes impractical):</p>
+<ul>
+<li>Remove negative values during data analysis</li>
+<li>Interpolate: Replace negative with average of neighboring values</li>
+<li>Example Python:
+  <code>python
+  df['distance'] = df['distance'].clip(lower=0)</code></li>
+</ul>
+<p><strong>⚙️ Prevention:</strong>
+- Use proper data types (unsigned int for distances)
+- Add I2C pull-up resistors in hardware design
+- Test I2C reliability before deployment (read sensor 1000× in loop, check for errors)</p>
+<hr>
+<h2 id="category-sd-card-and-data-logging">Category: SD Card and Data Logging<a class="headerlink" href="#category-sd-card-and-data-logging" title="Permanent link">¤</a></h2>
+<h3 id="issue-7-sd-card-shows-corrupt-or-needs-formatting">Issue 7: SD Card Shows "Corrupt" or "Needs Formatting"<a class="headerlink" href="#issue-7-sd-card-shows-corrupt-or-needs-formatting" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Remove SD card from logger
+- Insert in computer
+- Windows says: "Disk needs formatting" or "Corrupt"
+- Files unreadable</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>Improper shutdown</strong> (removed card or power while writing)
+2. <strong>Battery died during write</strong> (file not closed properly)
+3. <strong>SD card quality</strong> (cheap cards fail easily)
+4. <strong>Filesystem corruption</strong> (bug in logger code)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Attempt data recovery</strong></p>
+<pre><code>Before formatting, try recovery:
+
+Windows:
+- Right-click drive → Properties → Tools → Check
+- Let Windows scan and repair
+
+Mac:
+- Disk Utility → First Aid → Run
+
+Linux:
+- fsck command
+
+Recovery software (if above fails):
+- Recuva (free, Windows)
+- PhotoRec (free, multi-platform)
+- DiskDigger (free/paid)
+</code></pre>
+<p><strong>Step 2: Format properly</strong></p>
+<pre><code>If recovery fails or you don't need data:
+
+Windows:
+- Right-click drive → Format
+- File system: FAT32
+- Allocation unit size: 32 kilobytes
+- Quick Format: Unchecked (full format tests for bad sectors)
+
+Mac:
+- Disk Utility → Erase
+- Format: MS-DOS (FAT)
+- Scheme: Master Boot Record
+
+Linux:
+sudo mkfs.vfat -F 32 -S 512 -s 64 /dev/sdX1
+</code></pre>
+<p><strong>Step 3: Test card</strong></p>
+<pre><code>After formatting:
+- Copy test file to card
+- Verify file readable
+- Remove and re-insert
+- File still there? → Card OK
+- File corrupted again? → Card failing, replace
+</code></pre>
+<p><strong>Step 4: Prevent future corruption</strong></p>
+<pre><code>Code improvements:
+1. Flush data after each write:
+   dataFile.flush(); // Forces write to disk
+
+2. Close file before sleep:
+   dataFile.close();
+   // Sleep
+   dataFile = SD.open("data.csv", FILE_WRITE);
+
+3. Add battery-low check:
+   if(battery &lt; 3.3) {
+     dataFile.close();
+     enterEmergencyShutdown();
+   }
+</code></pre>
+<p><strong>⚙️ Prevention:</strong>
+- Never remove SD card while logger powered on
+- Ensure battery adequate before deployment
+- Use quality SD cards (SanDisk, Samsung, Kingston)
+- Implement flush() or close() in code regularly
+- Retrieve loggers before battery critical</p>
+<hr>
+<h3 id="issue-8-csv-file-has-weird-characters-or-formatting">Issue 8: CSV File Has Weird Characters or Formatting<a class="headerlink" href="#issue-8-csv-file-has-weird-characters-or-formatting" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Open CSV in Excel/Numbers
+- Strange symbols: <code>Ã</code>, <code>Â</code>, <code>â€™</code>
+- Columns misaligned
+- Data looks corrupted</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>Character encoding mismatch</strong> (UTF-8 vs. ASCII)
+2. <strong>Delimiter confusion</strong> (comma vs. semicolon)
+3. <strong>Quote marks in data</strong> (breaking CSV parsing)
+4. <strong>Incomplete lines</strong> (power loss during write)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Try different encoding</strong></p>
+<pre><code>Excel (Windows):
+- Open Excel (don't double-click CSV)
+- Data → From Text/CSV
+- File Origin: UTF-8
+- Delimiter: Comma
+- Import
+
+Excel (Mac):
+- Similar: Data → Get External Data → Import Text File
+- Select encoding: UTF-8 or Western (ASCII)
+
+LibreOffice/OpenOffice:
+- Opens CSV with import dialog automatically
+- Character set: Unicode (UTF-8)
+- Separated by: Comma
+</code></pre>
+<p><strong>Step 2: Inspect raw file</strong></p>
+<pre><code>Use text editor (Notepad++, Sublime, VS Code):
+- Open CSV as plain text
+- Look for:
+  - Proper line endings (should be LF or CRLF)
+  - Consistent delimiters (all commas? all semicolons?)
+  - Any binary characters (� symbols)
+
+Example good CSV:
+Date,Time,Distance_mm,Temp_C,Battery_V
+2025-12-27,10:00:00,1234,22.5,3.85
+2025-12-27,10:15:00,1256,23.1,3.84
+
+Example bad CSV (missing delimiters):
+Date,Time,Distance_mm,Temp_C,Battery_V
+2025-12-2710:00:001234,22.5,3.85
+</code></pre>
+<p><strong>Step 3: Fix code if needed</strong></p>
+<pre><code class="language-cpp">// Ensure consistent delimiters:
+dataFile.print(year);
+dataFile.print(",");  // Not "," sometimes and ";" other times
+dataFile.print(month);
+dataFile.print(",");
+// etc.
+
+// Handle special characters:
+// If data might contain commas, use quotes:
+dataFile.print("\"");
+dataFile.print(dataString);
+dataFile.print("\"");
+</code></pre>
+<p><strong>Step 4: Salvage partial data</strong></p>
+<pre><code>If file partially corrupted:
+- Identify good rows vs. bad
+- Manually fix or delete bad rows
+- Or: Script to clean (Python pandas, etc.)
+</code></pre>
+<p><strong>⚙️ Prevention:</strong>
+- Write header row on first boot (clear template)
+- Use consistent delimiters (comma standard)
+- Test CSV parsing with sample data before deployment
+- Flush file buffer regularly to ensure complete writes</p>
+<hr>
+<h2 id="category-telemetry">Category: Telemetry<a class="headerlink" href="#category-telemetry" title="Permanent link">¤</a></h2>
+<h3 id="issue-9-thingsboard-shows-old-data-only">Issue 9: ThingsBoard Shows Old Data Only<a class="headerlink" href="#issue-9-thingsboard-shows-old-data-only" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- ThingsBoard dashboard has data
+- But latest data is hours or days old
+- Logger is still running (SD card has current data)</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>Network lost</strong> (logger moved out of coverage)
+2. <strong>SIM deactivated</strong> (payment lapse, carrier issue)
+3. <strong>Battery too low</strong> (telemetry disabled at low voltage)
+4. <strong>XBee failure</strong> (hardware or configuration)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Check recent SD card data</strong></p>
+<pre><code>- Retrieve logger (or analyze last data on ThingsBoard)
+- SD card shows recent measurements?
+  - Yes: Logger working, telemetry failed → Go to Step 2
+  - No: Logger stopped completely → See Flowchart 1 (Logger Won't Record)
+</code></pre>
+<p><strong>Step 2: Verify battery voltage</strong></p>
+<pre><code>- Check voltage in latest SD card data
+- Voltage &lt;3.5V?
+  - Yes: Battery too low for reliable telemetry
+  - Solution: Replace battery, retest
+- Voltage &gt;3.5V?
+  - Telemetry failure for other reason → Go to Step 3
+</code></pre>
+<p><strong>Step 3: Test SIM card</strong></p>
+<pre><code>- Remove SIM from XBee
+- Insert in phone (adapter if needed)
+- Does phone get service?
+  - No service: SIM deactivated
+    - Solution: Contact carrier, reactivate, verify payment
+  - Has service: SIM works → Go to Step 4
+</code></pre>
+<p><strong>Step 4: Check signal at site</strong></p>
+<pre><code>- Using phone (same carrier as SIM):
+  - Test signal strength at logger location
+  - Coverage adequate?
+    - No coverage: Site moved out of coverage (tree fell, logger relocated?)
+      - Solution: Move logger, or use external antenna
+    - Coverage OK: XBee issue → Go to Step 5
+</code></pre>
+<p><strong>Step 5: XBee configuration check</strong></p>
+<pre><code>- Remove XBee, connect to XBee Studio
+- Read configuration
+- Critical settings:
+  - AP = 2? (if not, set to 2)
+  - AN = correct APN? (verify with carrier)
+  - SM = 1? (pin sleep)
+- Test connection in XBee Studio (Cellular Network tab)
+  - Can connect? XBee works
+    - Solution: Re-install in logger, check Arduino code
+  - Can't connect? Network issue or XBee failure
+    - Solution: Update firmware, or replace XBee
+</code></pre>
+<p><strong>⚙️ Prevention:</strong>
+- Set up ThingsBoard alerts (no data for &gt;2× expected interval)
+- Monitor battery voltage remotely
+- Keep SIM plan auto-renewing
+- Test signal before deployment (don't assume coverage)</p>
+<hr>
+<h3 id="issue-10-telemetry-works-intermittently">Issue 10: Telemetry Works Intermittently<a class="headerlink" href="#issue-10-telemetry-works-intermittently" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Some transmissions succeed (200 OK)
+- Some fail (timeout, error code)
+- Success rate: 50-80%</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>Weak signal</strong> (marginal coverage)
+2. <strong>Network congestion</strong> (peak times)
+3. <strong>Antenna issue</strong> (loose connection, damaged)
+4. <strong>Power issue</strong> (voltage sag during transmission)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Correlation analysis</strong></p>
+<pre><code>Look for patterns in failures:
+
+By time of day?
+- Failures at night: Network congestion (everyone home, using network)
+- Failures during day: Possible but less common
+- Random: Signal strength issue
+
+By battery voltage?
+- Failures increase as voltage drops: Power issue
+- No correlation: Network issue
+
+By temperature?
+- Failures in cold: Battery voltage sag in cold
+- No correlation: Other issue
+</code></pre>
+<p><strong>Step 2: Signal strength check</strong></p>
+<pre><code>If possible (XBee Studio or serial debug):
+- Check RSSI during successful vs. failed transmissions
+- RSSI &lt; -100 dBm: Weak signal, high failure rate
+  - Solution: External antenna, relocate logger higher/clearer location
+- RSSI &gt; -95 dBm but still failures: Not signal strength, go to Step 3
+</code></pre>
+<p><strong>Step 3: Antenna check</strong></p>
+<pre><code>- Inspect antenna connection (if external)
+- U.FL connector seated properly? (tiny, fragile)
+- Antenna wire damaged? (check for kinks, breaks)
+- Internal PCB antenna: Clearance OK? (no contact with enclosure/metal)
+- Solution: Re-seat connector, replace antenna if damaged
+</code></pre>
+<p><strong>Step 4: Add retry logic</strong></p>
+<pre><code class="language-cpp">// In Arduino code:
+bool sendData() {
+  int attempts = 0;
+  while(attempts &lt; 3) {
+    if(transmitXBee()) {
+      return true; // Success
+    }
+    delay(30000); // Wait 30 seconds
+    attempts++;
+  }
+  return false; // Failed after 3 attempts
+}
+</code></pre>
+<p><strong>Step 5: Adjust transmission timing</strong></p>
+<pre><code>If failures correlate with peak hours:
+- Shift transmission time:
+  - Instead of every hour on the hour (09:00, 10:00, 11:00)
+  - Offset: Random minute (09:17, 10:42, 11:23)
+  - Reduces network congestion (not everyone transmitting simultaneously)
+</code></pre>
+<p><strong>⚙️ Prevention:</strong>
+- Deploy in location with good signal (test with phone first)
+- Use external antenna for marginal locations
+- Implement retry logic with exponential backoff
+- Monitor success rate via ThingsBoard (should be &gt;90%)</p>
+<hr>
+<h2 id="category-arduino-and-firmware">Category: Arduino and Firmware<a class="headerlink" href="#category-arduino-and-firmware" title="Permanent link">¤</a></h2>
+<h3 id="issue-11-upload-fails-programmer-is-not-responding-or-avrdude-stk500_getsync">Issue 11: Upload Fails "programmer is not responding" or "avrdude: stk500_getsync()"<a class="headerlink" href="#issue-11-upload-fails-programmer-is-not-responding-or-avrdude-stk500_getsync" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Trying to upload sketch to logger
+- Arduino IDE error: "programmer is not responding" or similar avrdude error
+- Upload fails at 0% or during communication phase</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>Sensor connected during upload</strong> (CRITICAL - most common for Wari Ultrasonic)
+2. <strong>FTDI cable wrong orientation</strong> (green/black reversed)
+3. <strong>Wrong board settings</strong> (not MiniCore ATmega328)
+4. <strong>Wrong clock settings</strong> (not External 8 MHz)
+5. <strong>FTDI cable not seated</strong> properly
+6. <strong>Power issue</strong> (insufficient power or no power)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Disconnect sensor (CRITICAL for Wari Ultrasonic)</strong></p>
+<pre><code>⚠️ THE MOST COMMON CAUSE ⚠️
+
+For Wari Ultrasonic loggers with Maxbotix sensor:
+- Unplug the WHITE CONNECTOR from the logger
+- The sensor and FTDI use the same serial port
+- Sensor causes interference preventing upload
+- After upload completes, reconnect the sensor
+
+This does NOT apply to Lidar models.
+</code></pre>
+<p><strong>Step 2: Verify FTDI orientation</strong></p>
+<pre><code>Check board markings:
+- Green wire → "GRN" marking
+- Black wire → "BLK" marking
+- On cellular/lidar: Black wire on SD card side
+
+If reversed:
+- Disconnect immediately
+- Rotate 180°
+- Reconnect firmly
+</code></pre>
+<p><strong>Step 3: Verify Arduino IDE settings</strong></p>
+<pre><code>Tools → Board → MiniCore: "ATmega328"
+Tools → Clock: "External 8 MHz"
+
+NOT: "Arduino Pro or Pro Mini"  ← Old/Wrong!
+</code></pre>
+<p><strong>Step 4: Check power</strong></p>
+<pre><code>- Power switch to OFF (powered by FTDI)
+- Or battery installed and switch ON
+- LED should briefly light when reset button pressed
+</code></pre>
+<p><strong>Step 5: Reseat FTDI cable</strong></p>
+<pre><code>- Disconnect FTDI from logger
+- Check all pins aligned
+- Press firmly onto header
+- Should sit flush
+</code></pre>
+<p><strong>Step 6: Try different USB port</strong></p>
+<pre><code>- Some USB ports provide insufficient current
+- Try USB 2.0 port (more reliable than USB 3.0)
+- Avoid USB hubs
+</code></pre>
+<p><strong>⚙️ Prevention:</strong>
+- <strong>Always disconnect sensor before programming</strong> (Wari Ultrasonic)
+- Label FTDI cable with orientation arrow
+- Double-check board settings before every upload
+- Keep FTDI connection list handy</p>
+<hr>
+<h3 id="issue-12-upload-fails-serial-port-already-in-use">Issue 12: Upload Fails "Serial Port Already in Use"<a class="headerlink" href="#issue-12-upload-fails-serial-port-already-in-use" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Trying to upload sketch to logger
+- Arduino IDE error: "Serial port busy" or "Access denied"</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>Serial Monitor open</strong> (locks port)
+2. <strong>Another program using port</strong> (PuTTY, Coolterm, etc.)
+3. <strong>Previous upload not finished</strong> (port hung)
+4. <strong>Driver issue</strong> (Windows)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Close Serial Monitor</strong></p>
+<pre><code>- In Arduino IDE: Close Serial Monitor window
+- Wait 2 seconds
+- Retry upload
+</code></pre>
+<p><strong>Step 2: Check for other programs</strong></p>
+<pre><code>Windows:
+- Ctrl+Shift+Esc (Task Manager)
+- Look for: PuTTY, Coolterm, Serial Monitor, Python scripts
+- End task
+
+Mac:
+- Activity Monitor
+- Search for serial terminal programs
+- Quit
+
+Linux:
+- ps aux | grep tty
+- kill [PID]
+</code></pre>
+<p><strong>Step 3: Disconnect and reconnect</strong></p>
+<pre><code>- Unplug FTDI cable
+- Wait 5 seconds
+- Reconnect
+- Retry upload
+</code></pre>
+<p><strong>Step 4: Restart Arduino IDE</strong></p>
+<pre><code>- Close Arduino IDE completely
+- Reopen
+- Retry upload
+</code></pre>
+<p><strong>Step 5: Reboot computer</strong> (if all else fails)</p>
+<p><strong>⚙️ Prevention:</strong>
+- Always close Serial Monitor before uploading
+- Don't run multiple serial programs simultaneously
+- Unplug FTDI after use (prevents accidental port locking)</p>
+<hr>
+<h3 id="issue-13-sketch-compiles-but-logger-does-nothing">Issue 13: Sketch Compiles but Logger Does Nothing<a class="headerlink" href="#issue-13-sketch-compiles-but-logger-does-nothing" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Upload successful (100%, "Done uploading")
+- Logger powers on (LED blinks once)
+- Then: Nothing. No logging, no LED, no serial output</p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>Wrong board selected</strong> (compiled for wrong MCU)
+2. <strong>Bootloader corruption</strong> (rare)
+3. <strong>Clock configuration wrong</strong> (code runs but timing off)
+4. <strong>Infinite loop in setup()</strong> (code hangs)</p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Verify board selection</strong></p>
+<pre><code>Arduino IDE:
+- Tools → Board → MiniCore: Should be "ATmega328"
+- Tools → Clock: Should be "External 8 MHz"
+- If wrong: Select correct, re-upload
+</code></pre>
+<p><strong>Step 2: Test basic blink</strong></p>
+<pre><code class="language-cpp">// Upload simplest possible code to verify functionality:
+void setup() {
+  pinMode(13, OUTPUT); // Or whatever pin has LED
+}
+
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
+}
+
+// Should blink every second
+// If doesn't blink: Hardware or bootloader issue
+// If blinks: Logger is OK, issue is in main code
+</code></pre>
+<p><strong>Step 3: Enable debug serial output</strong></p>
+<pre><code class="language-cpp">void setup() {
+  Serial.begin(115200);
+  Serial.println("Logger starting...");
+  Serial.println("Initializing RTC...");
+  // etc.
+}
+
+// Connect Serial Monitor, check for output
+// No output: Serial initialization issue or bootloader problem
+// Has output: Follow debug messages to find where code fails
+</code></pre>
+<p><strong>Step 4: Check for infinite loops</strong></p>
+<pre><code class="language-cpp">// Common mistake:
+void setup() {
+  while(!rtc.begin()) {
+    // Stuck here forever if RTC not connected!
+    delay(1000);
+  }
+}
+
+// Better:
+void setup() {
+  int attempts = 0;
+  while(!rtc.begin() &amp;&amp; attempts &lt; 10) {
+    delay(1000);
+    attempts++;
+  }
+  if(attempts == 10) {
+    // RTC failed, but continue with default time
+    Serial.println("RTC failed");
+  }
+}
+</code></pre>
+<p><strong>Step 5: Burn bootloader</strong> (if hardware OK but nothing works)</p>
+<pre><code>Requires:
+- Another Arduino as ISP programmer
+- Or: AVR ISP programmer
+
+Process:
+- Arduino IDE → File → Examples → ArduinoISP
+- Upload ArduinoISP to programmer Arduino
+- Connect programmer to target logger (ISP header)
+- Tools → Programmer → Arduino as ISP
+- Tools → Burn Bootloader
+- Wait for completion
+- Re-upload your sketch
+</code></pre>
+<p><strong>⚙️ Prevention:</strong>
+- Always verify board selection before upload
+- Test with simple blink sketch first (known-good code)
+- Add debug serial output during development
+- Avoid infinite loops (use timeouts)</p>
+<hr>
+<h3 id="issue-14-compilation-errors-missing-libraries">Issue 14: Compilation Errors - Missing Libraries<a class="headerlink" href="#issue-14-compilation-errors-missing-libraries" title="Permanent link">¤</a></h3>
+<p><strong>🔴 Symptom:</strong>
+- Arduino IDE shows red error text
+- Error message: <code>fatal error: [LibraryName].h: No such file or directory</code>
+- Examples:
+  - <code>SdFat.h: No such file or directory</code>
+  - <code>LowPower.h: No such file or directory</code>
+  - <code>RtcDS3231.h: No such file or directory</code>
+  - <code>AltSoftSerial.h: No such file or directory</code></p>
+<p><strong>🔍 Likely Causes:</strong>
+1. <strong>Required library not installed</strong>
+2. <strong>Library installed but Arduino can't find it</strong>
+3. <strong>Wrong library version</strong>
+4. <strong>Library folder name incorrect</strong></p>
+<p><strong>✅ Solution:</strong></p>
+<p><strong>Step 1: Install via Library Manager</strong></p>
+<pre><code>Arduino IDE:
+1. Sketch → Include Library → Manage Libraries
+2. Search for library name (e.g., "SdFat")
+3. Find correct library:
+   - "RTC" by Makuna
+   - "SdFat" by Bill Greiman  
+   - "AltSoftSerial" by Paul Stoffregen
+4. Click Install
+5. Wait for installation
+6. Restart Arduino IDE
+7. Retry compilation
+</code></pre>
+<p><strong>Step 2: Manual Installation (for Rocketscream LowPower)</strong></p>
+<pre><code>The LowPower library requires manual installation:
+
+1. Go to https://github.com/rocketscream/Low-Power
+2. Click Code → Download ZIP
+3. Extract ZIP file
+4. Rename folder to "Low-Power" (if needed)
+5. Move folder to Arduino libraries directory:
+   - Windows: Documents\Arduino\libraries\
+   - Mac: ~/Documents/Arduino/libraries/
+   - Linux: ~/Arduino/libraries/
+6. Restart Arduino IDE
+7. Verify: Sketch → Include Library → Low-Power should appear
+</code></pre>
+<p><strong>Step 3: Check library folder structure</strong></p>
+<pre><code>Correct structure:
+Arduino/libraries/Low-Power/
+  ├── LowPower.h
+  ├── LowPower.cpp
+  └── examples/
+
+Wrong structure (won't work):
+Arduino/libraries/Low-Power-master/Low-Power/
+  └── ...
+
+Fix: Move inner folder up one level
+</code></pre>
+<p><strong>Step 4: Verify library compatibility</strong></p>
+<pre><code>Error: "This LowPower library only works on AVR processors"
+
+Solution:
+- Board must be: MiniCore → ATmega328
+- Clock must be: External 8 MHz
+- NOT: Arduino Uno, Mega, or other non-AVR boards
+</code></pre>
+<p><strong>Required Libraries for Riverlabs Loggers:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Author</th>
+<th>Installation Method</th>
+<th>Used For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RTC</td>
+<td>Makuna</td>
+<td>Library Manager</td>
+<td>Real-time clock</td>
+</tr>
+<tr>
+<td>SdFat</td>
+<td>Bill Greiman</td>
+<td>Library Manager</td>
+<td>SD card access</td>
+</tr>
+<tr>
+<td>Rocketscream LowPower</td>
+<td>Rocketscream</td>
+<td>Manual (GitHub)</td>
+<td>Sleep modes</td>
+</tr>
+<tr>
+<td>SoftwareSerial</td>
+<td>Arduino</td>
+<td>Built-in</td>
+<td>Cellular models</td>
+</tr>
+<tr>
+<td>AltSoftSerial</td>
+<td>Paul Stoffregen</td>
+<td>Library Manager</td>
+<td>Cellular models</td>
+</tr>
+</tbody>
+</table>
+<p><strong>⚙️ Prevention:</strong>
+- Install all required libraries before first compile
+- Keep libraries updated (but test after updates)
+- Document library versions that work
+- Keep backup of working library versions</p>
+<hr>
+<h2 id="quick-reference-table">Quick Reference Table<a class="headerlink" href="#quick-reference-table" title="Permanent link">¤</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Most Likely Cause</th>
+<th>Quick Fix</th>
+<th>Page Ref</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Won't power on</td>
+<td>Dead battery</td>
+<td>Replace battery</td>
+<td>Issue 1</td>
+</tr>
+<tr>
+<td>Battery drains overnight</td>
+<td>Not sleeping</td>
+<td>Check sleep code</td>
+<td>Issue 2</td>
+</tr>
+<tr>
+<td>Reads max range</td>
+<td>No target/aimed wrong</td>
+<td>Re-aim sensor</td>
+<td>Issue 4</td>
+</tr>
+<tr>
+<td>Distance drifts</td>
+<td>Temperature expansion</td>
+<td>Accept or compensate</td>
+<td>Issue 5</td>
+</tr>
+<tr>
+<td>Negative lidar values</td>
+<td>I2C error</td>
+<td>Add pull-ups</td>
+<td>Issue 6</td>
+</tr>
+<tr>
+<td>SD card corrupt</td>
+<td>Improper shutdown</td>
+<td>Recovery tools, then format</td>
+<td>Issue 7</td>
+</tr>
+<tr>
+<td>Weird CSV characters</td>
+<td>Encoding mismatch</td>
+<td>Import as UTF-8</td>
+<td>Issue 8</td>
+</tr>
+<tr>
+<td>ThingsBoard shows old data</td>
+<td>Network/SIM issue</td>
+<td>Check signal/SIM</td>
+<td>Issue 9</td>
+</tr>
+<tr>
+<td>Intermittent telemetry</td>
+<td>Weak signal</td>
+<td>External antenna</td>
+<td>Issue 10</td>
+</tr>
+<tr>
+<td>Upload fails "not responding"</td>
+<td>Sensor connected</td>
+<td>Disconnect sensor</td>
+<td>Issue 11</td>
+</tr>
+<tr>
+<td>Upload fails serial busy</td>
+<td>Serial Monitor open</td>
+<td>Close Serial Monitor</td>
+<td>Issue 12</td>
+</tr>
+<tr>
+<td>Upload OK but no action</td>
+<td>Wrong board selected</td>
+<td>Check board settings</td>
+<td>Issue 13</td>
+</tr>
+<tr>
+<td>Compile error missing library</td>
+<td>Library not installed</td>
+<td>Install library</td>
+<td>Issue 14</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="still-stuck">Still Stuck?<a class="headerlink" href="#still-stuck" title="Permanent link">¤</a></h2>
+<p>If your issue isn't listed here:</p>
+<ol>
+<li><strong>Check <a href="../diagnostic-flowcharts/">Diagnostic Flowcharts</a></strong> - Visual troubleshooting paths</li>
+<li><strong>Review <a href="../faq/">FAQ</a></strong> - Edge cases and unusual questions</li>
+<li><strong>Search GitHub Issues</strong> - Someone may have had same problem</li>
+<li><strong>Contact Support</strong> - With details: symptoms, diagnostics performed, serial logs</li>
+</ol>
+<hr>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">¤</a></h2>
+<ul>
+<li>📊 <a href="../diagnostic-flowcharts/">Diagnostic Flowcharts</a> - Visual troubleshooting trees</li>
+<li>❓ <a href="../faq/">FAQ</a> - Frequently asked questions</li>
+<li>🔧 <a href="../../hardware/maintenance/">Maintenance Guide</a> - Preventive maintenance</li>
+<li>📞 Support - <a href="https://github.com/ICHydro/Riverlabs/issues">GitHub Issues</a></li>
+</ul>
+<hr>
+<div class="admonition success">
+<p class="admonition-title">Most Issues Are Simple</p>
+<p>80% of issues are: battery low, SD card not formatted, or XBee misconfigured. Check the basics first!</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

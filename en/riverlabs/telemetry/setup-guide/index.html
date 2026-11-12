@@ -1,0 +1,3391 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/ichydro_docs/en/" hreflang="en">
+        
+          <link rel="alternate" href="/ichydro_docs/es/" hreflang="es">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Telemetry Setup Guide - ICHydro documentation (EN)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#telemetry-setup-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ICHydro documentation (EN)" class="md-header__button md-logo" aria-label="ICHydro documentation (EN)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ICHydro documentation (EN)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Telemetry Setup Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/ichydro_docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/ichydro_docs/es/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/stephwills/ichydro_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../paricia/" class="md-tabs__link">
+          
+  
+  
+  Paricia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../operation/quick-start/quick-start/" class="md-tabs__link">
+          
+  
+  
+  Riverlabs
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ICHydro documentation (EN)" class="md-nav__button md-logo" aria-label="ICHydro documentation (EN)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    ICHydro documentation (EN)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/stephwills/ichydro_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paricia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Paricia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/adding_elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding elements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/importing_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importing Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/quality_assurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality assurance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/synthetic_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthetic data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code structure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Code structure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/variable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/sensor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/station/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/importing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/reference" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Riverlabs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Riverlabs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quick Start
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/quick-start/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/quick-start/data-download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/quick-start/arduino-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/quick-start/first-deployment-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/hardware/technical-specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/hardware/battery-power-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battery &amp; Power Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/hardware/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/hardware/data-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/troubleshooting/diagnostic-flowcharts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnostic Flowcharts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/sensor-positioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor Positioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/mounting-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mounting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/environmental-considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environmental Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/arduino-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/uploading-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uploading Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-telemetry-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Telemetry Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xbee-module-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XBee Module Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XBee Module Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xbee3-cellular-lte-mnb-iot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XBee3 Cellular LTE-M/NB-IoT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xbee-vs-legacy-xctu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XBee vs. Legacy XCTU
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-sim-card-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: SIM Card Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: SIM Card Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-a-sim-card-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a SIM Card Provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-plan-sizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Plan Sizing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sim-card-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIM Card Installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-xbee-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: XBee Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: XBee Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hardware-setup-for-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hardware Setup for Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xbee-studio-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XBee Studio Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="XBee Studio Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initial-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Connection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#essential-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Essential Settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-connection-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Connection Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-arduino-code-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Arduino Code Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Arduino Code Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-integration-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Integration Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Integration Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bench-test-before-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bench Test Before Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-test-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Test Failures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-field-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Field Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Field Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-deployment-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Deployment Checklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-signal-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Site Signal Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-installation-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Installation Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Power Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#telemetry-power-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Telemetry Power Budget
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring-and-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring and Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Monitoring and Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-monitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What to Monitor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-telemetry-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Telemetry Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternative-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternative Platforms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cost-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cost Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="telemetry-setup-guide">Telemetry Setup Guide<a class="headerlink" href="#telemetry-setup-guide" title="Permanent link">¤</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>This guide covers end-to-end setup of cellular telemetry using XBee modules for remote data transmission, from hardware installation to first successful transmission.</p>
+</div>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¤</a></h2>
+<p>Riverlabs loggers can be equipped with cellular telemetry to transmit data remotely, eliminating the need for frequent site visits and enabling real-time monitoring.</p>
+<p><strong>What You'll Need:</strong></p>
+<ul>
+<li>Riverlabs logger with XBee socket (telemetry version)</li>
+<li>Digi XBee3 Cellular LTE-M/NB-IoT module</li>
+<li>Active SIM card with data plan</li>
+<li>USB adapter for XBee configuration</li>
+<li>XBee Studio software (replaces XCTU)</li>
+<li>ThingsBoard account or compatible IoT platform</li>
+<li>Computer for configuration</li>
+</ul>
+<p><strong>Time Required:</strong> 1–2 hours for first-time setup</p>
+<hr>
+<h2 id="system-architecture">System Architecture<a class="headerlink" href="#system-architecture" title="Permanent link">¤</a></h2>
+<h3 id="how-telemetry-works">How Telemetry Works<a class="headerlink" href="#how-telemetry-works" title="Permanent link">¤</a></h3>
+<pre><code>┌─────────────┐
+│   Logger    │ → Collects sensor data
+│   (Arduino) │    Writes to SD card
+└──────┬──────┘
+       │
+       │ UART (Serial)
+       ↓
+┌─────────────┐
+│ XBee Module │ → Cellular modem
+│  (LTE-M)    │    Connects to network
+└──────┬──────┘
+       │
+       │ Cellular Network
+       ↓
+┌─────────────┐
+│  Internet   │
+└──────┬──────┘
+       │
+       │ HTTP/CoAP
+       ↓
+┌─────────────┐
+│ ThingsBoard │ → IoT Platform
+│  or Server  │    Stores &amp; displays data
+└─────────────┘
+</code></pre>
+<h3 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">¤</a></h3>
+<ol>
+<li><strong>Logger measures</strong> sensor data at configured interval</li>
+<li><strong>Arduino processes</strong> data and stores to SD card</li>
+<li><strong>Arduino sends</strong> data to XBee via serial</li>
+<li><strong>XBee connects</strong> to cellular network (LTE-M or NB-IoT)</li>
+<li><strong>XBee transmits</strong> data to configured server</li>
+<li><strong>Server receives</strong> and stores data</li>
+<li><strong>Dashboard displays</strong> data to user</li>
+</ol>
+<hr>
+<h2 id="xbee-module-overview">XBee Module Overview<a class="headerlink" href="#xbee-module-overview" title="Permanent link">¤</a></h2>
+<h3 id="xbee3-cellular-lte-mnb-iot">XBee3 Cellular LTE-M/NB-IoT<a class="headerlink" href="#xbee3-cellular-lte-mnb-iot" title="Permanent link">¤</a></h3>
+<p><strong>Specifications:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Technology</strong></td>
+<td>LTE-M (Cat-M1) and NB-IoT</td>
+</tr>
+<tr>
+<td><strong>Frequencies</strong></td>
+<td>Region-specific (check model)</td>
+</tr>
+<tr>
+<td><strong>Power</strong></td>
+<td>3.3 V–4.3 V operation</td>
+</tr>
+<tr>
+<td><strong>Current Draw</strong></td>
+<td>~200 mA during transmission</td>
+</tr>
+<tr>
+<td><strong>Form Factor</strong></td>
+<td>Through-hole or surface mount</td>
+</tr>
+<tr>
+<td><strong>Protocols</strong></td>
+<td>HTTP, HTTPS, CoAP, MQTT</td>
+</tr>
+<tr>
+<td><strong>SIM</strong></td>
+<td>Micro-SIM slot</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Model Numbers:</strong></p>
+<ul>
+<li><strong>XB3-C-A2-UT-001</strong>: LTE-M (US/Canada)</li>
+<li><strong>XB3-C-A2-EU-001</strong>: LTE-M/NB-IoT (Europe)</li>
+<li><strong>Check Digi website</strong> for your region</li>
+</ul>
+<h3 id="xbee-vs-legacy-xctu">XBee vs. Legacy XCTU<a class="headerlink" href="#xbee-vs-legacy-xctu" title="Permanent link">¤</a></h3>
+<div class="admonition info">
+<p class="admonition-title">XBee Studio Replaces XCTU</p>
+<p>Digi has replaced XCTU with <strong>XBee Studio</strong> for XBee3 modules. If you have older documentation referencing XCTU, the concepts are the same but the interface is updated.</p>
+<p>Download: <a href="https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xbee-studio">https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xbee-studio</a></p>
+</div>
+<hr>
+<h2 id="step-1-sim-card-setup">Step 1: SIM Card Setup<a class="headerlink" href="#step-1-sim-card-setup" title="Permanent link">¤</a></h2>
+<h3 id="choosing-a-sim-card-provider">Choosing a SIM Card Provider<a class="headerlink" href="#choosing-a-sim-card-provider" title="Permanent link">¤</a></h3>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>LTE-M or NB-IoT support (not all carriers support these)</li>
+<li>IoT/M2M data plan</li>
+<li>Good coverage at deployment location</li>
+<li>Reasonable data rates</li>
+</ul>
+<p><strong>Recommended Providers (by region):</strong></p>
+<p><strong>United States:</strong></p>
+<ul>
+<li>AT&amp;T IoT DataConnect</li>
+<li>Verizon ThingSpace</li>
+<li>T-Mobile IoT</li>
+<li>Hologram (multi-carrier)</li>
+<li>Soracom (multi-carrier)</li>
+</ul>
+<p><strong>Europe:</strong></p>
+<ul>
+<li>Vodafone M2M</li>
+<li>Telefonica M2M</li>
+<li>1NCE (multi-carrier, IoT-specific)</li>
+<li>Eseye (multi-carrier)</li>
+</ul>
+<p><strong>United Kingdom:</strong></p>
+<ul>
+<li>EE M2M</li>
+<li>Vodafone IoT</li>
+<li>O2 M2M</li>
+</ul>
+<p><strong>Global/Multi-Region:</strong></p>
+<ul>
+<li>Hologram</li>
+<li>Twilio Super SIM</li>
+<li>1NCE</li>
+</ul>
+<h3 id="data-plan-sizing">Data Plan Sizing<a class="headerlink" href="#data-plan-sizing" title="Permanent link">¤</a></h3>
+<p><strong>Estimate Data Usage:</strong></p>
+<p><strong>Typical Data per Transmission:</strong></p>
+<ul>
+<li>Measurement data: ~50–100 bytes</li>
+<li>HTTP overhead: ~200–500 bytes</li>
+<li>Total per transmission: ~300–600 bytes</li>
+<li>Safety factor: Use 1 KB per transmission</li>
+</ul>
+<p><strong>Monthly Data Calculation:</strong></p>
+<pre><code>Example: 15-minute logging, hourly transmission
+- Measurements per day: 96 (every 15 min)
+- Transmissions per day: 24 (hourly)
+- Data per day: 24 × 1 KB = 24 KB
+- Data per month: 24 KB × 30 = 720 KB ≈ 1 MB
+
+Recommended plan: 5-10 MB/month
+</code></pre>
+<p><strong>Typical Plans:</strong></p>
+<ul>
+<li>1 MB/month: ~$2–5/month</li>
+<li>10 MB/month: ~$5–10/month</li>
+<li>100 MB/month: ~$10–15/month</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Start Small</p>
+<p>Begin with the smallest plan. You can always upgrade. Most IoT plans don't have overage charges — they just stop working.</p>
+</div>
+<h3 id="sim-card-installation">SIM Card Installation<a class="headerlink" href="#sim-card-installation" title="Permanent link">¤</a></h3>
+<p><strong>SIM Type:</strong></p>
+<ul>
+<li>Micro-SIM (3FF)</li>
+</ul>
+<p><strong>Installation Steps:</strong></p>
+<ol>
+<li>
+<p><strong>Obtain activated SIM</strong> from provider</p>
+</li>
+<li>
+<p><strong>Note APN settings</strong> (provided by carrier)</p>
+<ul>
+<li>APN name (e.g., <code>m2m.com.attwireless.com</code>)</li>
+<li>Username (if required)</li>
+<li>Password (if required)</li>
+</ul>
+</li>
+<li>
+<p><strong>Locate SIM slot</strong> on XBee module</p>
+<ul>
+<li>Usually on underside</li>
+<li>Spring-loaded tray</li>
+</ul>
+</li>
+<li>
+<p><strong>Insert SIM</strong></p>
+<ul>
+<li>Correct orientation (notched corner)</li>
+<li>Push until clicks</li>
+<li>Ensure fully seated</li>
+</ul>
+</li>
+<li>
+<p><strong>Record ICCID</strong> (SIM card number for tracking)</p>
+</li>
+</ol>
+<hr>
+<h2 id="step-2-xbee-configuration">Step 2: XBee Configuration<a class="headerlink" href="#step-2-xbee-configuration" title="Permanent link">¤</a></h2>
+<h3 id="hardware-setup-for-configuration">Hardware Setup for Configuration<a class="headerlink" href="#hardware-setup-for-configuration" title="Permanent link">¤</a></h3>
+<p><strong>Required:</strong></p>
+<ul>
+<li>XBee module with SIM installed</li>
+<li>XBee USB adapter (e.g., Digi XBee Grove Development Board or similar)</li>
+<li>USB cable</li>
+<li>Computer with XBee Studio installed</li>
+</ul>
+<p><strong>Connection:</strong></p>
+<ol>
+<li>Insert XBee into USB adapter</li>
+<li>Connect adapter to computer via USB</li>
+<li>Wait for drivers to install (Windows)</li>
+<li>Note COM port or device (check Device Manager/System Preferences)</li>
+</ol>
+<h3 id="xbee-studio-configuration">XBee Studio Configuration<a class="headerlink" href="#xbee-studio-configuration" title="Permanent link">¤</a></h3>
+<h4 id="initial-connection">Initial Connection<a class="headerlink" href="#initial-connection" title="Permanent link">¤</a></h4>
+<ol>
+<li><strong>Launch XBee Studio</strong></li>
+<li><strong>Click "Add Device"</strong></li>
+<li><strong>Select USB connection</strong></li>
+<li><strong>Choose correct COM port</strong></li>
+<li><strong>Click "Add Device"</strong></li>
+<li><strong>XBee Studio reads module configuration</strong></li>
+</ol>
+<h4 id="essential-settings">Essential Settings<a class="headerlink" href="#essential-settings" title="Permanent link">¤</a></h4>
+<p>Navigate through tabs and configure the following:</p>
+<p><strong>1. Network Settings</strong></p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mobile Network</strong></td>
+<td>AN (Access Point Name)</td>
+<td>[Your carrier APN]</td>
+<td>e.g., <code>m2m.com.attwireless.com</code></td>
+</tr>
+<tr>
+<td><strong>APN Username</strong></td>
+<td>AU</td>
+<td>[If required]</td>
+<td>Leave blank if not needed</td>
+</tr>
+<tr>
+<td><strong>APN Password</strong></td>
+<td>AV</td>
+<td>[If required]</td>
+<td>Leave blank if not needed</td>
+</tr>
+<tr>
+<td><strong>Network Technology</strong></td>
+<td>NT</td>
+<td>LTE-M (or NB-IoT)</td>
+<td>Match your SIM</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2. Serial Settings</strong></p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Baud Rate</strong></td>
+<td>BD</td>
+<td>9600</td>
+<td>Must match Arduino code</td>
+</tr>
+<tr>
+<td><strong>Parity</strong></td>
+<td>NB</td>
+<td>No parity</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td><strong>Stop Bits</strong></td>
+<td>SB</td>
+<td>1</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td><strong>Data Bits</strong></td>
+<td>--</td>
+<td>8</td>
+<td>Default</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3. API Mode</strong></p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API Enable</strong></td>
+<td>AP</td>
+<td>2</td>
+<td>API Mode with escapes</td>
+</tr>
+<tr>
+<td><strong>API Output Mode</strong></td>
+<td>AO</td>
+<td>0</td>
+<td>Standard</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition danger">
+<p class="admonition-title">API Mode is Critical</p>
+<p>The logger firmware expects <strong>API Mode 2 (with escapes)</strong>. Setting AP=1 (without escapes) or AP=0 (transparent) will prevent communication.</p>
+</div>
+<p><strong>4. Power Management</strong></p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sleep Mode</strong></td>
+<td>SM</td>
+<td>1</td>
+<td>Pin Sleep</td>
+</tr>
+<tr>
+<td><strong>Sleep Options</strong></td>
+<td>SO</td>
+<td>0</td>
+<td>Standard</td>
+</tr>
+</tbody>
+</table>
+<p><strong>5. Additional Settings</strong></p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Parameter</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Timeout</strong></td>
+<td>RO</td>
+<td>3</td>
+<td>Character timeout</td>
+</tr>
+<tr>
+<td><strong>TD</strong></td>
+<td>TD</td>
+<td>0</td>
+<td>TX Delay</td>
+</tr>
+<tr>
+<td><strong>FT</strong></td>
+<td>FT</td>
+<td>681</td>
+<td>Flow control threshold</td>
+</tr>
+</tbody>
+</table>
+<h4 id="verify-configuration">Verify Configuration<a class="headerlink" href="#verify-configuration" title="Permanent link">¤</a></h4>
+<ol>
+<li><strong>Click "Read" to refresh current settings</strong></li>
+<li><strong>Verify all parameters match above</strong></li>
+<li><strong>Click "Write" to save configuration to module</strong></li>
+<li><strong>Wait for confirmation</strong></li>
+<li><strong>Click "Read" again to verify settings saved</strong></li>
+</ol>
+<h3 id="network-connection-test">Network Connection Test<a class="headerlink" href="#network-connection-test" title="Permanent link">¤</a></h3>
+<p><strong>Test Cellular Connection:</strong></p>
+<ol>
+<li>In XBee Studio, navigate to <strong>"Cellular Network"</strong> section</li>
+<li>Click <strong>"Connect to Network"</strong></li>
+<li>Wait for connection (may take 30–60 seconds)</li>
+<li>Check for:<ul>
+<li>Network registered: Yes</li>
+<li>Signal strength: &gt;-100 dBm (stronger is better)</li>
+<li>IP address assigned</li>
+</ul>
+</li>
+</ol>
+<p><strong>Troubleshooting Connection Issues:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Likely Cause</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No network found</td>
+<td>SIM inactive or wrong APN</td>
+<td>Verify with carrier, check APN</td>
+</tr>
+<tr>
+<td>Poor signal</td>
+<td>Location</td>
+<td>Move to window/higher location</td>
+</tr>
+<tr>
+<td>Connection timeout</td>
+<td>Network technology mismatch</td>
+<td>Switch LTE-M ↔ NB-IoT</td>
+</tr>
+<tr>
+<td>Authentication failed</td>
+<td>Wrong APN credentials</td>
+<td>Verify username/password</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="step-3-arduino-code-configuration">Step 3: Arduino Code Configuration<a class="headerlink" href="#step-3-arduino-code-configuration" title="Permanent link">¤</a></h2>
+<h3 id="code-parameters">Code Parameters<a class="headerlink" href="#code-parameters" title="Permanent link">¤</a></h3>
+<p>The telemetry configuration is set in the Arduino sketch (e.g., <code>wari_3G.ino</code>).</p>
+<p><strong>Key Definitions:</strong></p>
+<pre><code class="language-cpp">// Telemetry Configuration
+#define TELEMETRY_INTERVAL 12 // Transmit every N measurements
+#define SERVER_URL "http://demo.thingsboard.io/api/v1/[YOUR_TOKEN]/telemetry"
+// XBee Settings (must match XBee configuration)
+#define XBEE_BAUD 9600
+</code></pre>
+<p><strong>Adjust for Your Setup:</strong></p>
+<ol>
+<li>
+<p><strong>TELEMETRY_INTERVAL</strong></p>
+<ul>
+<li>How often to transmit</li>
+<li>Example: If logging every 15 min, interval 4 = transmit hourly</li>
+<li>Higher interval = better battery life</li>
+</ul>
+</li>
+<li>
+<p><strong>SERVER_URL</strong></p>
+<ul>
+<li>Your ThingsBoard or server endpoint</li>
+<li>Include authentication token in URL</li>
+<li>See <a href="../thingsboard-configuration/">ThingsBoard Configuration</a> for details</li>
+</ul>
+</li>
+<li>
+<p><strong>XBEE_BAUD</strong></p>
+<ul>
+<li>Must match XBee BD setting</li>
+<li>Default: 9600</li>
+</ul>
+</li>
+</ol>
+<h3 id="upload-code">Upload Code<a class="headerlink" href="#upload-code" title="Permanent link">¤</a></h3>
+<ol>
+<li><strong>Connect logger</strong> via FTDI cable</li>
+<li><strong>Open Arduino IDE</strong></li>
+<li><strong>Load appropriate sketch</strong><ul>
+<li><code>wari_3G.ino</code> for Wari with telemetry</li>
+<li><code>wari_lidar_cellular.ino</code> for lidar with telemetry</li>
+</ul>
+</li>
+<li><strong>Verify settings</strong> above are correct</li>
+<li><strong>Compile</strong> (check for errors)</li>
+<li><strong>Upload</strong> to logger</li>
+<li><strong>Open Serial Monitor</strong> (115200 baud if DEBUG enabled)</li>
+<li><strong>Verify initialization messages</strong></li>
+</ol>
+<hr>
+<h2 id="step-4-integration-testing">Step 4: Integration Testing<a class="headerlink" href="#step-4-integration-testing" title="Permanent link">¤</a></h2>
+<h3 id="bench-test-before-deployment">Bench Test Before Deployment<a class="headerlink" href="#bench-test-before-deployment" title="Permanent link">¤</a></h3>
+<p><strong>Setup:</strong></p>
+<ol>
+<li>Logger with XBee installed (SIM card in place)</li>
+<li>Power on with charged battery</li>
+<li>Serial monitor connected (optional but recommended)</li>
+<li>Near window for good cellular signal</li>
+</ol>
+<p><strong>Test Procedure:</strong></p>
+<ol>
+<li>
+<p><strong>Power On</strong></p>
+<ul>
+<li>Logger boots</li>
+<li>Initializes XBee</li>
+<li>XBee connects to network (watch LED)</li>
+</ul>
+</li>
+<li>
+<p><strong>Wait for Measurement</strong></p>
+<ul>
+<li>Logger takes measurement(s)</li>
+<li>Stores to SD card</li>
+<li>Prepares telemetry packet</li>
+</ul>
+</li>
+<li>
+<p><strong>Observe Transmission</strong></p>
+<ul>
+<li>XBee LED activity (if visible)</li>
+<li>Serial debug messages (if enabled):
+    <code>Connecting to network...
+    Network connected
+    Sending data...
+    HTTP POST: 200 OK
+    Transmission successful</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Verify Reception</strong></p>
+<ul>
+<li>Check ThingsBoard dashboard</li>
+<li>Data should appear within 1–2 minutes</li>
+<li>Verify timestamp and values correct</li>
+</ul>
+</li>
+</ol>
+<p><strong>Expected Timing:</strong></p>
+<ul>
+<li>Boot: 5–10 seconds</li>
+<li>Network connection: 30–60 seconds (first time), 5–15 seconds (subsequent)</li>
+<li>Data transmission: 5–10 seconds</li>
+<li>Total: ~1 minute per transmission</li>
+</ul>
+<h3 id="troubleshooting-test-failures">Troubleshooting Test Failures<a class="headerlink" href="#troubleshooting-test-failures" title="Permanent link">¤</a></h3>
+<p><strong>No network connection:</strong></p>
+<ul>
+<li>Verify SIM active</li>
+<li>Check signal strength (try window/outside)</li>
+<li>Verify APN settings</li>
+<li>Check XBee LED patterns</li>
+</ul>
+<p><strong>Network connects but no data received:</strong></p>
+<ul>
+<li>Verify server URL correct</li>
+<li>Check authentication token</li>
+<li>Inspect Serial Monitor for error codes</li>
+<li>Test server endpoint with curl/Postman</li>
+</ul>
+<p><strong>Data received but values wrong:</strong></p>
+<ul>
+<li>Check data parsing on server</li>
+<li>Verify JSON format</li>
+<li>Compare with SD card data</li>
+</ul>
+<hr>
+<h2 id="step-5-field-deployment">Step 5: Field Deployment<a class="headerlink" href="#step-5-field-deployment" title="Permanent link">¤</a></h2>
+<h3 id="pre-deployment-checklist">Pre-Deployment Checklist<a class="headerlink" href="#pre-deployment-checklist" title="Permanent link">¤</a></h3>
+<ul>
+<li>[ ] Bench test successful (3+ transmissions)</li>
+<li>[ ] Server receiving and displaying data correctly</li>
+<li>[ ] Battery fully charged</li>
+<li>[ ] Signal strength acceptable at deployment site (test with phone)</li>
+<li>[ ] Telemetry interval appropriate for battery life</li>
+<li>[ ] SD card backup functioning (in case telemetry fails)</li>
+<li>[ ] Antenna secure and properly oriented</li>
+</ul>
+<h3 id="site-signal-testing">Site Signal Testing<a class="headerlink" href="#site-signal-testing" title="Permanent link">¤</a></h3>
+<p>Before permanent installation:</p>
+<ol>
+<li><strong>Bring phone on same carrier</strong> as SIM</li>
+<li><strong>Check signal strength</strong> at installation location</li>
+<li><strong>Consider antenna position:</strong><ul>
+<li>Vertical orientation often best</li>
+<li>Higher = better signal</li>
+<li>Away from metal obstructions</li>
+<li>Clear view of sky preferred</li>
+</ul>
+</li>
+</ol>
+<p><strong>Minimum Signal Requirements:</strong></p>
+<ul>
+<li>LTE-M/NB-IoT: -110 dBm minimum, -90 dBm good</li>
+<li>Weaker signals work but drain battery faster</li>
+</ul>
+<h3 id="post-installation-verification">Post-Installation Verification<a class="headerlink" href="#post-installation-verification" title="Permanent link">¤</a></h3>
+<p><strong>Within 1 Hour:</strong></p>
+<ul>
+<li>[ ] First transmission received</li>
+<li>[ ] Data appears on dashboard</li>
+<li>[ ] Values reasonable</li>
+</ul>
+<p><strong>Within 24 Hours:</strong></p>
+<ul>
+<li>[ ] Regular transmissions occurring</li>
+<li>[ ] No gaps in data</li>
+<li>[ ] Battery voltage stable</li>
+<li>[ ] Signal strength consistent</li>
+</ul>
+<p><strong>First Week:</strong></p>
+<ul>
+<li>[ ] Daily data check</li>
+<li>[ ] Monitor battery drain rate</li>
+<li>[ ] Watch for transmission failures</li>
+<li>[ ] Adjust interval if needed</li>
+</ul>
+<hr>
+<h2 id="power-considerations">Power Considerations<a class="headerlink" href="#power-considerations" title="Permanent link">¤</a></h2>
+<h3 id="telemetry-power-budget">Telemetry Power Budget<a class="headerlink" href="#telemetry-power-budget" title="Permanent link">¤</a></h3>
+<p><strong>XBee Power Consumption:</strong></p>
+<ul>
+<li>Sleep: &lt;1 mA</li>
+<li>Connected idle: ~10 mA</li>
+<li>Transmission: ~200 mA (5–10 seconds)</li>
+</ul>
+<p><strong>Impact on Battery Life:</strong></p>
+<p>Without telemetry (SD only):</p>
+<ul>
+<li>Wari: ~30–60 days (15 min logging)</li>
+<li>Lidar: ~15–30 days (15 min logging)</li>
+</ul>
+<p>With telemetry (hourly transmission):</p>
+<ul>
+<li>Wari: ~20–40 days (15 min logging)</li>
+<li>Lidar: ~10–20 days (15 min logging)</li>
+</ul>
+<p><strong>Optimization Strategies:</strong></p>
+<ol>
+<li>
+<p><strong>Reduce transmission frequency</strong></p>
+<ul>
+<li>Measure every 15 min, transmit hourly</li>
+<li>4× battery life improvement vs. transmit-every-measurement</li>
+</ul>
+</li>
+<li>
+<p><strong>Scheduled transmissions</strong></p>
+<ul>
+<li>Transmit once or twice daily</li>
+<li>Massive power savings</li>
+<li>SD card holds full resolution data</li>
+</ul>
+</li>
+<li>
+<p><strong>Adaptive transmission</strong></p>
+<ul>
+<li>Transmit frequently during events</li>
+<li>Reduce during stable conditions</li>
+<li>Requires more complex code</li>
+</ul>
+</li>
+</ol>
+<p>See <a href="../../operation/hardware/battery-power-guide/">Battery &amp; Power Guide</a> for detailed calculations.</p>
+<hr>
+<h2 id="security-considerations">Security Considerations<a class="headerlink" href="#security-considerations" title="Permanent link">¤</a></h2>
+<h3 id="data-security">Data Security<a class="headerlink" href="#data-security" title="Permanent link">¤</a></h3>
+<p><strong>Transport Security:</strong></p>
+<ul>
+<li>Use HTTPS instead of HTTP when possible</li>
+<li>ThingsBoard supports TLS</li>
+<li>Some overhead in data and processing</li>
+</ul>
+<p><strong>Authentication:</strong></p>
+<ul>
+<li>Device tokens (ThingsBoard)</li>
+<li>API keys</li>
+<li>Never hard-code credentials if code is public</li>
+</ul>
+<p><strong>SIM Security:</strong></p>
+<ul>
+<li>Use fixed IP APN if available</li>
+<li>SIM PIN protection</li>
+<li>Monitor for unusual data usage</li>
+</ul>
+<h3 id="physical-security">Physical Security<a class="headerlink" href="#physical-security" title="Permanent link">¤</a></h3>
+<ul>
+<li>XBee and antenna are valuable targets for theft</li>
+<li>Consider concealment or protective enclosures</li>
+<li>Document serial numbers for tracking</li>
+</ul>
+<hr>
+<h2 id="monitoring-and-maintenance">Monitoring and Maintenance<a class="headerlink" href="#monitoring-and-maintenance" title="Permanent link">¤</a></h2>
+<h3 id="what-to-monitor">What to Monitor<a class="headerlink" href="#what-to-monitor" title="Permanent link">¤</a></h3>
+<p><strong>Daily (automated alerts):</strong></p>
+<ul>
+<li>[ ] Data received in last 24 hours</li>
+<li>[ ] Battery voltage trend</li>
+<li>[ ] Signal strength</li>
+</ul>
+<p><strong>Weekly:</strong></p>
+<ul>
+<li>[ ] Transmission success rate</li>
+<li>[ ] Data quality</li>
+<li>[ ] SIM data usage</li>
+</ul>
+<p><strong>Monthly:</strong></p>
+<ul>
+<li>[ ] Battery health</li>
+<li>[ ] Plan data remaining</li>
+<li>[ ] Firmware updates available</li>
+</ul>
+<h3 id="common-telemetry-issues">Common Telemetry Issues<a class="headerlink" href="#common-telemetry-issues" title="Permanent link">¤</a></h3>
+<p>See <a href="../troubleshooting-connections/">Troubleshooting Connections</a> for detailed diagnostics.</p>
+<p><strong>Quick Reference:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Quick Check</th>
+<th>Likely Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No transmissions</td>
+<td>SIM active? Signal?</td>
+<td>Check carrier status, move logger</td>
+</tr>
+<tr>
+<td>Intermittent</td>
+<td>Signal strength varying?</td>
+<td>Improve antenna position</td>
+</tr>
+<tr>
+<td>High battery drain</td>
+<td>Transmission too frequent?</td>
+<td>Reduce frequency</td>
+</tr>
+<tr>
+<td>Data corrupted</td>
+<td>Server parsing issue?</td>
+<td>Check JSON format</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="alternative-platforms">Alternative Platforms<a class="headerlink" href="#alternative-platforms" title="Permanent link">¤</a></h2>
+<p>While this guide focuses on ThingsBoard, XBee3 modules support various platforms:</p>
+<ul>
+<li><strong>MQTT brokers</strong> (Mosquitto, HiveMQ, AWS IoT)</li>
+<li><strong>HTTP REST APIs</strong> (custom servers)</li>
+<li><strong>CoAP servers</strong></li>
+<li><strong>Azure IoT Hub</strong></li>
+<li><strong>AWS IoT Core</strong></li>
+<li><strong>Google Cloud IoT</strong></li>
+</ul>
+<p>Configuration principles are similar; consult platform documentation for endpoints and authentication.</p>
+<hr>
+<h2 id="cost-summary">Cost Summary<a class="headerlink" href="#cost-summary" title="Permanent link">¤</a></h2>
+<p><strong>One-Time Costs:</strong></p>
+<ul>
+<li>XBee3 Cellular module: $60–80</li>
+<li>USB adapter for configuration: $20–30</li>
+<li>SIM card activation: $0–20</li>
+</ul>
+<p><strong>Recurring Costs:</strong></p>
+<ul>
+<li>Data plan: $2–15/month</li>
+<li>Server hosting (if not ThingsBoard free tier): $0–10/month</li>
+</ul>
+<p><strong>Total First Year:</strong></p>
+<ul>
+<li>Hardware: ~$100</li>
+<li>Service: ~$50–180</li>
+<li><strong>Total: ~$150–280</strong></li>
+</ul>
+<p>Compare to:</p>
+<ul>
+<li>Site visit costs (fuel, time)</li>
+<li>Data gaps from infrequent visits</li>
+<li>Real-time monitoring value</li>
+</ul>
+<hr>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">¤</a></h2>
+<ul>
+<li><a href="../thingsboard-configuration/">ThingsBoard Configuration</a>: Set up your dashboard</li>
+<li><a href="../xbee-setup-walkthrough/">XBee Setup Walkthrough</a>: Detailed XBee Studio guide with screenshots</li>
+<li><a href="../troubleshooting-connections/">Troubleshooting Connections</a>: Fix telemetry issues</li>
+</ul>
+<hr>
+<div class="admonition success">
+<p class="admonition-title">Telemetry Configured!</p>
+<p>With cellular telemetry working, you now have real-time remote monitoring of your logger. No more site visits just to check if it's working!</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

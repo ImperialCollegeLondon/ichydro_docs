@@ -1,0 +1,3574 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+          <link rel="alternate" href="/ichydro_docs/en/" hreflang="en">
+        
+          <link rel="alternate" href="/ichydro_docs/es/" hreflang="es">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Troubleshooting Telemetry Connections - ICHydro documentation (EN)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#troubleshooting-telemetry-connections" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ICHydro documentation (EN)" class="md-header__button md-logo" aria-label="ICHydro documentation (EN)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ICHydro documentation (EN)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Troubleshooting Telemetry Connections
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/ichydro_docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/ichydro_docs/es/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/stephwills/ichydro_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../paricia/" class="md-tabs__link">
+          
+  
+  
+  Paricia
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../operation/quick-start/quick-start/" class="md-tabs__link">
+          
+  
+  
+  Riverlabs
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ICHydro documentation (EN)" class="md-nav__button md-logo" aria-label="ICHydro documentation (EN)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    ICHydro documentation (EN)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/stephwills/ichydro_docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paricia
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Paricia
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/adding_elements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding elements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/importing_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importing Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/quality_assurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality assurance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/synthetic_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Synthetic data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/admin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Administrators
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_6">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_6" id="__nav_2_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code structure
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Code structure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/formatting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formatting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/variable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/sensor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/station/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/measurement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measurements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/Applications/importing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../paricia/reference" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Riverlabs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Riverlabs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quick Start
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/quick-start/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/quick-start/data-download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/quick-start/arduino-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/quick-start/first-deployment-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First Deployment Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/hardware/technical-specifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Specifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/hardware/battery-power-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Battery &amp; Power Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/hardware/maintenance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/hardware/data-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operation/troubleshooting/diagnostic-flowcharts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnostic Flowcharts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/sensor-positioning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor Positioning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/mounting-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mounting Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/environmental-considerations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Environmental Considerations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programming
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/arduino-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arduino Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../programming/uploading-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uploading Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Diagnostic Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagnostic Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-philosophy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Philosophy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-diagnostic-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Diagnostic Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-symptoms-and-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Symptoms and Solutions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Symptoms and Solutions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#symptom-1-logger-never-transmits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symptom 1: Logger Never Transmits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Symptom 1: Logger Never Transmits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layer-1-hardware-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer 1: Hardware Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-2-cellular-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer 2: Cellular Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-3-xbee-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer 3: XBee Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#layer-4-arduino-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer 4: Arduino Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symptom-2-intermittent-transmissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symptom 2: Intermittent Transmissions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Symptom 2: Intermittent Transmissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-signal-strength-fluctuations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cause 1: Signal Strength Fluctuations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-2-network-congestion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cause 2: Network Congestion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-3-power-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cause 3: Power Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-4-server-timeouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cause 4: Server Timeouts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symptom-3-data-appears-but-values-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symptom 3: Data Appears but Values Wrong
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Symptom 3: Data Appears but Values Wrong">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-json-format-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cause 1: JSON Format Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-2-data-parsing-on-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cause 2: Data Parsing on Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-3-timestamp-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cause 3: Timestamp Issues
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symptom-4-high-data-costs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symptom 4: High Data Costs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Symptom 4: High Data Costs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cause-1-transmission-frequency-too-high" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cause 1: Transmission Frequency Too High
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-2-failed-transmissions-retrying" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cause 2: Failed Transmissions Retrying
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cause-3-unnecessary-data-in-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cause 3: Unnecessary Data in Payload
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Diagnostics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Diagnostics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-serial-monitor-for-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Serial Monitor for Debugging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#xbee-studio-network-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XBee Studio Network Diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packet-capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packet Capture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-code-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Code Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Code Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xbee-error-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XBee Error Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-response-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Response Codes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arduino-xbee-library-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arduino XBee Library Errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preventive-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preventive Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Preventive Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regular Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#escalation-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escalation Path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Escalation Path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-contact-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Contact Support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-studies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case Studies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Case Studies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case-1-intermittent-failures-at-night" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 1: Intermittent Failures at Night
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-2-data-appears-but-timestamps-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 2: Data Appears but Timestamps Wrong
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-3-high-battery-drain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case 3: High Battery Drain
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-troubleshooting-flowchart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference: Troubleshooting Flowchart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="troubleshooting-telemetry-connections">Troubleshooting Telemetry Connections<a class="headerlink" href="#troubleshooting-telemetry-connections" title="Permanent link">¤</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">Overview</p>
+<p>This is a diagnostic guide for resolving cellular telemetry issues, from no connection to intermittent failures, with systematic troubleshooting approaches.</p>
+</div>
+<h2 id="diagnostic-overview">Diagnostic Overview<a class="headerlink" href="#diagnostic-overview" title="Permanent link">¤</a></h2>
+<h3 id="troubleshooting-philosophy">Troubleshooting Philosophy<a class="headerlink" href="#troubleshooting-philosophy" title="Permanent link">¤</a></h3>
+<p>When telemetry fails, problems can occur at multiple layers:</p>
+<pre><code>┌──────────────────┐
+│  ThingsBoard     │ ← Dashboard/Server issues
+├──────────────────┤
+│  Internet        │ ← Routing, DNS, firewalls
+├──────────────────┤
+│  Cellular Network│ ← Signal, APN, registration
+├──────────────────┤
+│  XBee Module     │ ← Configuration, firmware
+├──────────────────┤
+│  Logger/Arduino  │ ← Code, serial communication
+├──────────────────┤
+│  Power/Hardware  │ ← Battery, connections
+└──────────────────┘
+</code></pre>
+<p><strong>Systematic approach:</strong></p>
+<ol>
+<li>Identify symptom</li>
+<li>Isolate layer</li>
+<li>Test specific component</li>
+<li>Apply fix</li>
+<li>Verify resolution</li>
+</ol>
+<hr>
+<h2 id="quick-diagnostic-checklist">Quick Diagnostic Checklist<a class="headerlink" href="#quick-diagnostic-checklist" title="Permanent link">¤</a></h2>
+<p><strong>Start here for fast triage:</strong></p>
+<ul>
+<li><strong>Power:</strong> Battery &gt;3.3 V?</li>
+<li><strong>Hardware:</strong> XBee seated properly?</li>
+<li><strong>SIM:</strong> Active and inserted correctly?</li>
+<li><strong>Signal:</strong> RSSI better than -105 dBm?</li>
+<li><strong>Configuration:</strong> API Mode = 2?</li>
+<li><strong>Network:</strong> APN correct?</li>
+<li><strong>Server:</strong> ThingsBoard device active?</li>
+<li><strong>Code:</strong> Correct access token?</li>
+</ul>
+<p><strong>If all checked and still failing:</strong> Continue to detailed diagnostics below.</p>
+<hr>
+<h2 id="common-symptoms-and-solutions">Common Symptoms and Solutions<a class="headerlink" href="#common-symptoms-and-solutions" title="Permanent link">¤</a></h2>
+<h3 id="symptom-1-logger-never-transmits">Symptom 1: Logger Never Transmits<a class="headerlink" href="#symptom-1-logger-never-transmits" title="Permanent link">¤</a></h3>
+<p><strong>Observations:</strong></p>
+<ul>
+<li>No network connection</li>
+<li>XBee LED never blinks (if visible)</li>
+<li>Serial Monitor: "Network connection failed"</li>
+</ul>
+<h4 id="layer-1-hardware-check">Layer 1: Hardware Check<a class="headerlink" href="#layer-1-hardware-check" title="Permanent link">¤</a></h4>
+<p><strong>1. Battery Voltage</strong></p>
+<p>Low voltage causes XBee failures:</p>
+<table>
+<thead>
+<tr>
+<th>Voltage</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&gt;3.8 V</td>
+<td>Good</td>
+<td>Continue diagnostics</td>
+</tr>
+<tr>
+<td>3.5–3.8 V</td>
+<td>Marginal</td>
+<td>Charge/replace, retest</td>
+</tr>
+<tr>
+<td>&lt;3.5 V</td>
+<td>Too low</td>
+<td>Replace battery</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How to check:</strong></p>
+<ul>
+<li>Measure with multimeter</li>
+<li>Or: Serial Monitor shows voltage</li>
+<li>Or: ThingsBoard (if SD data uploaded manually)</li>
+</ul>
+<p><strong>2. XBee Physical Installation</strong></p>
+<ul>
+<li>Remove and inspect:<ul>
+<li>Pins straight?</li>
+<li>All pins engaging PCB socket?</li>
+<li>No bent/missing pins?</li>
+</ul>
+</li>
+<li>Re-seat firmly</li>
+<li>Visual inspection of solder joints (if DIY assembly)</li>
+</ul>
+<p><strong>3. SIM Card</strong></p>
+<ul>
+<li>Remove SIM</li>
+<li>Inspect for damage</li>
+<li>Ensure correct orientation</li>
+<li>Re-insert until clicks</li>
+<li>Verify SIM activated (call/text carrier)</li>
+</ul>
+<h4 id="layer-2-cellular-network">Layer 2: Cellular Network<a class="headerlink" href="#layer-2-cellular-network" title="Permanent link">¤</a></h4>
+<p><strong>1. Signal Strength</strong></p>
+<p><strong>Test location:</strong></p>
+<ul>
+<li>Move logger to window</li>
+<li>Elevate if possible</li>
+<li>Away from metal structures</li>
+<li>Test with phone (same carrier) at same location</li>
+</ul>
+<p><strong>Expected phone signal:</strong></p>
+<ul>
+<li>2+ bars: Should work</li>
+<li>1 bar: Marginal</li>
+<li>0 bars: Won't work</li>
+</ul>
+<p><strong>2. Network Technology Mismatch</strong></p>
+<p>Some carriers only support LTE-M OR NB-IoT:</p>
+<p><strong>Test both:</strong></p>
+<ol>
+<li>Connect XBee to XBee Studio</li>
+<li>Read configuration</li>
+<li>Current NT value?</li>
+<li>Try opposite:<ul>
+<li>If NT=0 (LTE-M): Change to NT=1 (NB-IoT)</li>
+<li>If NT=1 (NB-IoT): Change to NT=0 (LTE-M)</li>
+</ul>
+</li>
+<li>Write configuration</li>
+<li>Retest connection</li>
+</ol>
+<p><strong>3. APN Configuration</strong></p>
+<p><strong>Verify APN:</strong></p>
+<ol>
+<li>Contact SIM carrier</li>
+<li>Confirm APN name (case-sensitive!)</li>
+<li>Confirm username/password (usually blank)</li>
+<li>Reconfigure XBee if needed</li>
+</ol>
+<p><strong>Common mistakes:</strong></p>
+<ul>
+<li>Typo in APN</li>
+<li>Extra spaces</li>
+<li>Wrong case (some APNs are case-sensitive)</li>
+</ul>
+<p><strong>Common APNs:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Carrier</th>
+<th>Correct APN</th>
+<th>Common Mistakes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT&amp;T</td>
+<td><code>m2m.com.attwireless.com</code></td>
+<td><code>attwireless.com</code> (wrong)</td>
+</tr>
+<tr>
+<td>T-Mobile</td>
+<td><code>iot.t-mobile.com</code></td>
+<td><code>epc.tmobile.com</code> (consumer, not IoT)</td>
+</tr>
+<tr>
+<td>Verizon</td>
+<td><code>vzwinternet</code></td>
+<td><code>vzwm2m</code> (old)</td>
+</tr>
+<tr>
+<td>Hologram</td>
+<td><code>hologram</code></td>
+<td><code>hologram.io</code> (wrong)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="layer-3-xbee-configuration">Layer 3: XBee Configuration<a class="headerlink" href="#layer-3-xbee-configuration" title="Permanent link">¤</a></h4>
+<p><strong>Critical settings:</strong></p>
+<ol>
+<li>Connect to XBee Studio</li>
+<li>Read configuration</li>
+<li>Verify:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required Value</th>
+<th>If Wrong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AP</td>
+<td>2</td>
+<td><strong>CRITICAL</strong> — Must be 2!</td>
+</tr>
+<tr>
+<td>BD</td>
+<td>9600</td>
+<td>Must match Arduino</td>
+</tr>
+<tr>
+<td>AN</td>
+<td>[Your APN]</td>
+<td>Check carrier</td>
+</tr>
+<tr>
+<td>SM</td>
+<td>1</td>
+<td>For power saving</td>
+</tr>
+</tbody>
+</table>
+<p><strong>If any wrong:</strong></p>
+<ul>
+<li>Correct in XBee Studio</li>
+<li><strong>Click Write</strong></li>
+<li>Click Read to verify</li>
+<li>Power cycle XBee</li>
+<li>Retest</li>
+</ul>
+<h4 id="layer-4-arduino-code">Layer 4: Arduino Code<a class="headerlink" href="#layer-4-arduino-code" title="Permanent link">¤</a></h4>
+<p><strong>1. XBee Initialization</strong></p>
+<p><strong>Serial Monitor output</strong> (if DEBUG enabled):</p>
+<pre><code class="language-cpp">Initializing XBee...
+XBee ready           // ← Should see this
+</code></pre>
+<p><strong>If "XBee timeout" or similar:</strong></p>
+<ul>
+<li>Check serial connection (TX/RX pins)</li>
+<li>Verify baud rate match (9600)</li>
+<li>Check XBee physically present</li>
+</ul>
+<p><strong>2. Network Connection Logic</strong></p>
+<p><strong>Expected debug messages:</strong></p>
+<pre><code class="language-cpp">Connecting to network...
+Network status: 0x00
+Waiting for network...
+Network registered!
+IP address obtained
+</code></pre>
+<p><strong>If stuck at "Waiting for network":</strong></p>
+<ul>
+<li>Network issue (see Layer 2)</li>
+<li>XBee configuration (see Layer 3)</li>
+</ul>
+<hr>
+<h3 id="symptom-2-intermittent-transmissions">Symptom 2: Intermittent Transmissions<a class="headerlink" href="#symptom-2-intermittent-transmissions" title="Permanent link">¤</a></h3>
+<p><strong>Observations:</strong></p>
+<ul>
+<li>Sometimes works, sometimes fails</li>
+<li>"Success rate: 60–80%"</li>
+<li>Random gaps in ThingsBoard data</li>
+</ul>
+<h4 id="cause-1-signal-strength-fluctuations">Cause 1: Signal Strength Fluctuations<a class="headerlink" href="#cause-1-signal-strength-fluctuations" title="Permanent link">¤</a></h4>
+<p><strong>Diagnosis:</strong></p>
+<ul>
+<li>Check RSSI during failures vs. successes</li>
+<li>Pattern: Failures during specific times? (e.g., evenings = congestion)</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li>
+<p><strong>Improve antenna position:</strong></p>
+<ul>
+<li>Higher elevation</li>
+<li>Away from obstacles</li>
+<li>External antenna if using internal</li>
+</ul>
+</li>
+<li>
+<p><strong>Add retry logic</strong> (code modification):
+   ```cpp
+   int retries = 3;
+   bool success = false;</p>
+</li>
+</ol>
+<p>while(retries &gt; 0 &amp;&amp; !success) {
+     success = sendData();
+     if(!success) {
+       delay(30000); // Wait 30 sec
+       retries--;
+     }
+   }
+   ```</p>
+<ol>
+<li><strong>Increase timeout values</strong> in XBee communication</li>
+</ol>
+<h4 id="cause-2-network-congestion">Cause 2: Network Congestion<a class="headerlink" href="#cause-2-network-congestion" title="Permanent link">¤</a></h4>
+<p><strong>LTE-M/NB-IoT are shared resources:</strong></p>
+<ul>
+<li>Peak hours: More congestion</li>
+<li>Events: Temporary towers overload</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ol>
+<li><strong>Stagger transmission times</strong> across multiple loggers</li>
+<li><strong>Avoid peak hours</strong> if possible (schedule for 2–5 AM)</li>
+<li><strong>Increase transmission interval</strong> (reduce frequency)</li>
+</ol>
+<h4 id="cause-3-power-issues">Cause 3: Power Issues<a class="headerlink" href="#cause-3-power-issues" title="Permanent link">¤</a></h4>
+<p><strong>Brown-out during transmission:</strong></p>
+<p>XBee draws ~200 mA during transmit. If battery weak:</p>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Transmissions fail as battery drains</li>
+<li>Success rate correlates with battery voltage</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Replace battery sooner (don't wait until 3.3 V)</li>
+<li>Use higher capacity battery</li>
+<li>Reduce transmission frequency</li>
+</ol>
+<p><strong>Diagnostic code</strong> (check voltage before transmit):</p>
+<pre><code class="language-cpp">float voltage = readBatteryVoltage();
+if(voltage &lt; 3.5) {
+  // Skip telemetry, too low
+  Serial.println("Battery too low for telemetry");
+  return;
+}
+// Proceed with transmission
+</code></pre>
+<h4 id="cause-4-server-timeouts">Cause 4: Server Timeouts<a class="headerlink" href="#cause-4-server-timeouts" title="Permanent link">¤</a></h4>
+<p><strong>ThingsBoard or server issues:</strong></p>
+<p><strong>Test server availability:</strong></p>
+<pre><code class="language-bash"># From computer
+curl -X POST \
+  http://demo.thingsboard.io/api/v1/YOUR_TOKEN/telemetry \
+  -H 'Content-Type: application/json' \
+  -d '{"test":123}'
+</code></pre>
+<p><strong>Expected:</strong> <code>{}</code> (empty JSON = success)</p>
+<p><strong>If timeout or error:</strong></p>
+<ul>
+<li>ThingsBoard server down (check status page)</li>
+<li>Network routing issue</li>
+<li>Firewall blocking</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Wait and retry</li>
+<li>Use alternative server (Cloud vs. Demo)</li>
+</ul>
+<hr>
+<h3 id="symptom-3-data-appears-but-values-wrong">Symptom 3: Data Appears but Values Wrong<a class="headerlink" href="#symptom-3-data-appears-but-values-wrong" title="Permanent link">¤</a></h3>
+<p><strong>Observations:</strong></p>
+<ul>
+<li>ThingsBoard shows data</li>
+<li>But values incorrect, null, or garbled</li>
+</ul>
+<h4 id="cause-1-json-format-error">Cause 1: JSON Format Error<a class="headerlink" href="#cause-1-json-format-error" title="Permanent link">¤</a></h4>
+<p><strong>Logger sends:</strong></p>
+<pre><code class="language-json">{"distance_mm":1234,"battery_V":3.85}
+</code></pre>
+<p><strong>ThingsBoard expects keys to match:</strong></p>
+<ul>
+<li>Case-sensitive: <code>distance_mm</code> ≠ <code>Distance_MM</code></li>
+<li>Spelling matters</li>
+</ul>
+<p><strong>Diagnosis:</strong></p>
+<ol>
+<li>
+<p>Check Arduino code:
+   <code>cpp
+   String json = "{\"distance_mm\":";
+   json += distance;
+   json += ",\"battery_V\":";
+   json += voltage;
+   json += "}";</code></p>
+</li>
+<li>
+<p>Verify key names in ThingsBoard widget configuration</p>
+</li>
+</ol>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Fix key names in code or dashboard</li>
+<li>Consistent naming</li>
+</ul>
+<h4 id="cause-2-data-parsing-on-server">Cause 2: Data Parsing on Server<a class="headerlink" href="#cause-2-data-parsing-on-server" title="Permanent link">¤</a></h4>
+<p><strong>ThingsBoard interprets data types:</strong></p>
+<p><strong>Example issue:</strong></p>
+<ul>
+<li>Sent as string: <code>"distance_mm":"1234"</code></li>
+<li>Expected integer: <code>"distance_mm":1234</code></li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Remove quotes around numeric values in code</li>
+<li>Ensure <code>String(value)</code> doesn't add quotes</li>
+</ul>
+<h4 id="cause-3-timestamp-issues">Cause 3: Timestamp Issues<a class="headerlink" href="#cause-3-timestamp-issues" title="Permanent link">¤</a></h4>
+<p><strong>If timestamps wrong:</strong></p>
+<p><strong>Logger not setting timestamp:</strong></p>
+<ul>
+<li>ThingsBoard uses server time (usually correct)</li>
+</ul>
+<p><strong>Logger sending timestamp:</strong></p>
+<pre><code class="language-json">{"distance_mm":1234,"ts":1703688000000}
+</code></pre>
+<p><strong>Issue:</strong> Wrong epoch format</p>
+<ul>
+<li>ThingsBoard expects milliseconds</li>
+<li>Logger sending seconds</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<pre><code class="language-cpp">long timestamp = rtc.now().unixtime() * 1000L; // Convert to milliseconds
+</code></pre>
+<hr>
+<h3 id="symptom-4-high-data-costs">Symptom 4: High Data Costs<a class="headerlink" href="#symptom-4-high-data-costs" title="Permanent link">¤</a></h3>
+<p><strong>Observations:</strong></p>
+<ul>
+<li>SIM data usage higher than expected</li>
+<li>Plan exceeds quota</li>
+</ul>
+<h4 id="cause-1-transmission-frequency-too-high">Cause 1: Transmission Frequency Too High<a class="headerlink" href="#cause-1-transmission-frequency-too-high" title="Permanent link">¤</a></h4>
+<p><strong>Calculate expected usage:</strong></p>
+<ul>
+<li>Transmission size: ~500 bytes (0.5 KB)</li>
+<li>Transmissions per day: 24 (hourly)</li>
+<li>Daily usage: 24 × 0.5 = 12 KB</li>
+<li>Monthly: 12 KB × 30 = 360 KB</li>
+</ul>
+<p><strong>If actual usage &gt;&gt; expected:</strong></p>
+<ul>
+<li>Check transmission interval in code</li>
+<li>Verify not transmitting on every measurement</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Increase <code>TELEMETRY_INTERVAL</code> in code</li>
+<li>Balance: Data freshness vs. costs</li>
+</ul>
+<h4 id="cause-2-failed-transmissions-retrying">Cause 2: Failed Transmissions Retrying<a class="headerlink" href="#cause-2-failed-transmissions-retrying" title="Permanent link">¤</a></h4>
+<p><strong>Each retry = more data:</strong></p>
+<ul>
+<li>Failed transmission: Still uses data (overhead)</li>
+<li>Retry: Double data</li>
+<li>Multiple retries: Multiplies costs</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Fix root cause of failures (signal, config)</li>
+<li>Limit retries in code (max 3)</li>
+<li>Add exponential backoff</li>
+</ol>
+<h4 id="cause-3-unnecessary-data-in-payload">Cause 3: Unnecessary Data in Payload<a class="headerlink" href="#cause-3-unnecessary-data-in-payload" title="Permanent link">¤</a></h4>
+<p><strong>Minimize JSON size:</strong></p>
+<p><strong>Verbose (bad):</strong></p>
+<pre><code class="language-json">{
+  "sensor_distance_millimeters": 1234,
+  "battery_voltage_volts": 3.85,
+  "temperature_celsius": 22.5,
+  "signal_strength_dbm": -85,
+  "logger_id": "Wari-001",
+  "firmware_version": "1.2.3"
+}
+</code></pre>
+<p>Size: ~150 bytes</p>
+<p><strong>Compact (good):</strong></p>
+<pre><code class="language-json">{"d":1234,"b":3.85,"t":22.5}
+</code></pre>
+<p>Size: ~30 bytes</p>
+<p><strong>5× data savings!</strong></p>
+<p><strong>Balance:</strong> Compact keys vs. readability</p>
+<hr>
+<h2 id="advanced-diagnostics">Advanced Diagnostics<a class="headerlink" href="#advanced-diagnostics" title="Permanent link">¤</a></h2>
+<h3 id="using-serial-monitor-for-debugging">Using Serial Monitor for Debugging<a class="headerlink" href="#using-serial-monitor-for-debugging" title="Permanent link">¤</a></h3>
+<p><strong>Enable debug output in Arduino code:</strong></p>
+<pre><code class="language-cpp">#define DEBUG 1
+
+#if DEBUG
+  #define DEBUG_PRINT(x) Serial.print(x)
+  #define DEBUG_PRINTLN(x) Serial.println(x)
+#else
+  #define DEBUG_PRINT(x)
+  #define DEBUG_PRINTLN(x)
+#endif
+</code></pre>
+<p><strong>Expected output:</strong></p>
+<pre><code>[INIT] Starting Riverlabs Logger v2.1
+[INIT] RTC initialized
+[INIT] SD card OK
+[INIT] XBee initializing...
+[XBEE] Baud: 9600, API Mode
+[XBEE] Waiting for network...
+[XBEE] Network registered (30s)
+[XBEE] RSSI: -85 dBm
+[XBEE] IP: 10.123.45.67
+[SENSOR] Distance: 1234 mm, Temp: 22.5 C
+[DATA] JSON: {"distance_mm":1234,"battery_V":3.85}
+[XBEE] Sending to ThingsBoard...
+[XBEE] HTTP POST: 200 OK
+[XBEE] Transmission successful (8.5s)
+[POWER] Entering sleep mode
+</code></pre>
+<p><strong>Key indicators:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Meaning</th>
+<th>If Missing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>XBee initializing...</code></td>
+<td>Serial communication working</td>
+<td>Check connections</td>
+</tr>
+<tr>
+<td><code>Network registered</code></td>
+<td>Cellular connected</td>
+<td>Check SIM, APN, signal</td>
+</tr>
+<tr>
+<td><code>RSSI: -XX dBm</code></td>
+<td>Signal strength known</td>
+<td>XBee communication issue</td>
+</tr>
+<tr>
+<td><code>HTTP POST: 200 OK</code></td>
+<td>Server received data</td>
+<td>Check URL, token</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xbee-studio-network-diagnostics">XBee Studio Network Diagnostics<a class="headerlink" href="#xbee-studio-network-diagnostics" title="Permanent link">¤</a></h3>
+<p><strong>1. Connect XBee to XBee Studio</strong></p>
+<p><strong>2. Navigate to "Cellular Network" tab</strong></p>
+<p><strong>3. View current status:</strong></p>
+<ul>
+<li>
+<p><strong>Registration Status:</strong></p>
+<ul>
+<li>Not registered: No network</li>
+<li>Registered (home): Good</li>
+<li>Registered (roaming): May work (check roaming on SIM)</li>
+<li>Searching: Still looking</li>
+</ul>
+</li>
+<li>
+<p><strong>Signal Strength:</strong></p>
+<ul>
+<li>Numeric RSSI value</li>
+<li>Quality bars (0–5)</li>
+</ul>
+</li>
+<li>
+<p><strong>IP Address:</strong></p>
+<ul>
+<li>If assigned: Network is connected</li>
+<li>If blank: DHCP failed or not registered</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Usage:</strong></p>
+<ul>
+<li>Some modules track usage</li>
+<li>Compare to SIM plan</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Connection Test:</strong></p>
+<ul>
+<li>Click "Ping" or "Test Connection"</li>
+<li>Pings Digi server</li>
+<li>Confirms end-to-end connectivity</li>
+</ul>
+<p><strong>5. Diagnostic Commands (Advanced):</strong></p>
+<p>XBee Studio terminal:</p>
+<pre><code>AI      // Association indication (0 = connected)
+DB      // Signal strength
+CI      // Protocol status
+MY      // IP address
+</code></pre>
+<h3 id="packet-capture">Packet Capture<a class="headerlink" href="#packet-capture" title="Permanent link">¤</a></h3>
+<p><strong>For advanced debugging:</strong></p>
+<p><strong>1. Install Wireshark</strong> on computer</p>
+<p><strong>2. Capture HTTP traffic:</strong></p>
+<ul>
+<li>Use XBee connected to computer</li>
+<li>Run logger code</li>
+<li>Wireshark captures outbound HTTP</li>
+</ul>
+<p><strong>3. Inspect packets:</strong></p>
+<ul>
+<li>POST request details</li>
+<li>Headers</li>
+<li>Payload</li>
+<li>Server response</li>
+</ul>
+<p><strong>Useful for:</strong>
+- Verifying JSON format
+- Checking authentication headers
+- Seeing actual errors from server</p>
+<hr>
+<h2 id="error-code-reference">Error Code Reference<a class="headerlink" href="#error-code-reference" title="Permanent link">¤</a></h2>
+<h3 id="xbee-error-codes">XBee Error Codes<a class="headerlink" href="#xbee-error-codes" title="Permanent link">¤</a></h3>
+<p><strong>AI (Association Indication) parameter:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x00</td>
+<td>Connected</td>
+<td>Good!</td>
+</tr>
+<tr>
+<td>0x22</td>
+<td>Registering to network</td>
+<td>Wait</td>
+</tr>
+<tr>
+<td>0x23</td>
+<td>Connecting to internet</td>
+<td>Wait</td>
+</tr>
+<tr>
+<td>0x24</td>
+<td>Bypass mode active</td>
+<td>Check configuration</td>
+</tr>
+<tr>
+<td>0x25</td>
+<td>Initializing</td>
+<td>Wait or power cycle</td>
+</tr>
+<tr>
+<td>0x2A</td>
+<td>Airplane mode</td>
+<td>Disable airplane mode</td>
+</tr>
+<tr>
+<td>0x2F</td>
+<td>Switched off</td>
+<td>Check SM setting</td>
+</tr>
+</tbody>
+</table>
+<h3 id="http-response-codes">HTTP Response Codes<a class="headerlink" href="#http-response-codes" title="Permanent link">¤</a></h3>
+<p><strong>From ThingsBoard or server:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+<td>No action needed</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td>Check JSON format</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized</td>
+<td>Verify access token</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found</td>
+<td>Check server URL</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests</td>
+<td>Reduce frequency</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Server Error</td>
+<td>ThingsBoard issue, wait</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable</td>
+<td>Server down, wait</td>
+</tr>
+</tbody>
+</table>
+<h3 id="arduino-xbee-library-errors">Arduino XBee Library Errors<a class="headerlink" href="#arduino-xbee-library-errors" title="Permanent link">¤</a></h3>
+<p><strong>If using XBee Arduino library:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Meaning</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XBEE_TIMEOUT</td>
+<td>No response</td>
+<td>Check connections, baud rate</td>
+</tr>
+<tr>
+<td>XBEE_INVALID_RESPONSE</td>
+<td>Corrupt data</td>
+<td>Check API mode (must be 2)</td>
+</tr>
+<tr>
+<td>XBEE_TX_FAILURE</td>
+<td>Transmission failed</td>
+<td>Network issue</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="preventive-maintenance">Preventive Maintenance<a class="headerlink" href="#preventive-maintenance" title="Permanent link">¤</a></h2>
+<h3 id="regular-checks">Regular Checks<a class="headerlink" href="#regular-checks" title="Permanent link">¤</a></h3>
+<p><strong>Weekly:</strong></p>
+<ul>
+<li>Check battery voltage trend</li>
+<li>Verify transmission success rate &gt;90%</li>
+<li>Review signal strength (should be consistent)</li>
+</ul>
+<p><strong>Monthly:</strong></p>
+<ul>
+<li>Check SIM data usage vs. plan</li>
+<li>Inspect XBee physical condition (corrosion, etc.)</li>
+<li>Verify firmware up to date</li>
+</ul>
+<p><strong>Quarterly:</strong></p>
+<ul>
+<li>Test logger retrieval and reconfiguration</li>
+<li>Clean antenna connections</li>
+<li>Review and update server endpoints if needed</li>
+</ul>
+<h3 id="optimization">Optimization<a class="headerlink" href="#optimization" title="Permanent link">¤</a></h3>
+<p><strong>Maximize reliability:</strong></p>
+<ol>
+<li>
+<p><strong>Signal strength:</strong></p>
+<ul>
+<li>Use external antenna in marginal locations</li>
+<li>Elevate logger if possible</li>
+</ul>
+</li>
+<li>
+<p><strong>Power:</strong></p>
+<ul>
+<li>Size battery for 2× expected transmissions</li>
+<li>Monitor voltage, replace proactively</li>
+</ul>
+</li>
+<li>
+<p><strong>Transmission interval:</strong></p>
+<ul>
+<li>Balance freshness vs. battery life</li>
+<li>More frequent during events, less during stable conditions</li>
+</ul>
+</li>
+<li>
+<p><strong>Retry logic:</strong></p>
+<ul>
+<li>Max 3 retries</li>
+<li>Exponential backoff (5 s, 30 s, 60 s)</li>
+<li>Log failures to SD card</li>
+</ul>
+</li>
+<li>
+<p><strong>Monitoring:</strong></p>
+<ul>
+<li>Set up ThingsBoard alerts</li>
+<li>Email on: No data for 2× expected interval</li>
+<li>Email on: Battery &lt; 3.5 V</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="escalation-path">Escalation Path<a class="headerlink" href="#escalation-path" title="Permanent link">¤</a></h2>
+<h3 id="when-to-contact-support">When to Contact Support<a class="headerlink" href="#when-to-contact-support" title="Permanent link">¤</a></h3>
+<p><strong>If after all diagnostics:</strong>
+- Still no connection
+- Consistent failures
+- Unexplained behavior</p>
+<p><strong>Gather information before contacting:</strong></p>
+<ol>
+<li>
+<p><strong>Logger details:</strong></p>
+<ul>
+<li>Model (Wari, Lidar)</li>
+<li>Firmware version</li>
+<li>Logger ID</li>
+</ul>
+</li>
+<li>
+<p><strong>XBee details:</strong></p>
+<ul>
+<li>Model (XB3-C-A2-XX-001)</li>
+<li>Firmware version</li>
+<li>Configuration (export profile)</li>
+</ul>
+</li>
+<li>
+<p><strong>SIM/Carrier:</strong></p>
+<ul>
+<li>Carrier name</li>
+<li>Plan details</li>
+<li>APN</li>
+</ul>
+</li>
+<li>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Specific error messages</li>
+<li>Serial Monitor logs</li>
+<li>ThingsBoard screenshots</li>
+</ul>
+</li>
+<li>
+<p><strong>Diagnostics performed:</strong></p>
+<ul>
+<li>Tests run</li>
+<li>Results</li>
+</ul>
+</li>
+</ol>
+<h3 id="support-resources">Support Resources<a class="headerlink" href="#support-resources" title="Permanent link">¤</a></h3>
+<p><strong>Riverlabs/ICHydro:</strong></p>
+<ul>
+<li>GitHub Issues: https://github.com/ICHydro/Riverlabs/issues</li>
+<li>Email: (if provided by project)</li>
+</ul>
+<p><strong>Digi (XBee) Support:</strong></p>
+<ul>
+<li>Forums: https://www.digi.com/support/forum</li>
+<li>Technical support: (for XBee-specific issues)</li>
+</ul>
+<p><strong>ThingsBoard:</strong></p>
+<ul>
+<li>Community: https://groups.google.com/forum/#!forum/thingsboard</li>
+<li>Professional support: (paid plans)</li>
+</ul>
+<p><strong>Carrier (SIM) Support:</strong></p>
+<ul>
+<li>Contact your SIM provider for network issues</li>
+</ul>
+<hr>
+<h2 id="case-studies">Case Studies<a class="headerlink" href="#case-studies" title="Permanent link">¤</a></h2>
+<h3 id="case-1-intermittent-failures-at-night">Case 1: Intermittent Failures at Night<a class="headerlink" href="#case-1-intermittent-failures-at-night" title="Permanent link">¤</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Transmissions work during day (8 AM–6 PM)</li>
+<li>Fail overnight (6 PM–8 AM)</li>
+</ul>
+<p><strong>Investigation:</strong></p>
+<ul>
+<li>Signal strength: Same day/night</li>
+<li>Battery: Adequate</li>
+<li>Pattern: 100% success during day, 0% at night</li>
+</ul>
+<p><strong>Root Cause:</strong></p>
+<ul>
+<li>Carrier tower switch</li>
+<li>Night tower has different configuration</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Contacted carrier</li>
+<li>Tower configuration updated</li>
+<li>Success rate now 95%+ all times</li>
+</ul>
+<h3 id="case-2-data-appears-but-timestamps-wrong">Case 2: Data Appears but Timestamps Wrong<a class="headerlink" href="#case-2-data-appears-but-timestamps-wrong" title="Permanent link">¤</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>ThingsBoard receives data</li>
+<li>Timestamps show 1970 (epoch zero)</li>
+</ul>
+<p><strong>Root Cause:</strong></p>
+<ul>
+<li>RTC not set on logger</li>
+<li>Logger sending timestamp:0</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Set RTC with set_clock utility</li>
+<li>Or: Remove timestamp from payload (ThingsBoard uses server time)</li>
+</ul>
+<h3 id="case-3-high-battery-drain">Case 3: High Battery Drain<a class="headerlink" href="#case-3-high-battery-drain" title="Permanent link">¤</a></h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Battery drains in 5 days (expected 30 days)</li>
+<li>Telemetry working</li>
+</ul>
+<p><strong>Investigation:</strong></p>
+<ul>
+<li>Transmission frequency: Every measurement (too high)</li>
+<li>XBee not sleeping properly</li>
+</ul>
+<p><strong>Root Cause:</strong></p>
+<ul>
+<li>Sleep mode configuration</li>
+<li>SM not set to pin sleep</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Configure XBee: SM=1 (pin sleep)</li>
+<li>Increase TELEMETRY_INTERVAL to 12 (transmit every 12 measurements)</li>
+<li>Battery now lasts 35 days</li>
+</ul>
+<hr>
+<h2 id="quick-reference-troubleshooting-flowchart">Quick Reference: Troubleshooting Flowchart<a class="headerlink" href="#quick-reference-troubleshooting-flowchart" title="Permanent link">¤</a></h2>
+<pre><code>Logger not transmitting?
+├─ Power &gt;3.3V? ──No──&gt; Replace battery
+│   └─Yes
+├─ XBee seated? ──No──&gt; Re-seat XBee
+│   └─Yes
+├─ SIM active? ──No──&gt; Contact carrier
+│   └─Yes
+├─ Signal &gt;-105 dBm? ──No──&gt; Move logger or external antenna
+│   └─Yes
+├─ API Mode = 2? ──No──&gt; Reconfigure XBee (critical!)
+│   └─Yes
+├─ APN correct? ──No──&gt; Verify with carrier, reconfigure
+│   └─Yes
+├─ Network registered? ──No──&gt; Try NT=0/1, check SIM
+│   └─Yes
+├─ Server URL correct? ──No──&gt; Fix Arduino code
+│   └─Yes
+├─ Token valid? ──No──&gt; Get new token, update code
+│   └─Yes
+└─ Contact support with diagnostic log
+</code></pre>
+<hr>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">¤</a></h2>
+<ul>
+<li><a href="../setup-guide/">Telemetry Setup Guide</a>: Complete setup overview</li>
+<li><a href="../xbee-setup-walkthrough/">XBee Setup Walkthrough</a>: Detailed XBee configuration</li>
+<li><a href="../thingsboard-configuration/">ThingsBoard Configuration</a>: Dashboard setup</li>
+<li><a href="../../operation/hardware/battery-power-guide/">Battery &amp; Power Guide</a>: Power optimization</li>
+</ul>
+<hr>
+<div class="admonition tip">
+<p class="admonition-title">Systematic Approach Works</p>
+<p>Most telemetry issues are simple: wrong APN, bad signal or configuration mistake. Work through diagnostics methodically and you'll find the problem!</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
