@@ -53,4 +53,4 @@ theme:
 nav:
   - Home: index.md
   - Paricia: '!import https://github.com/ImperialCollegeLondon/paricia?branch=main&extra_imports=["overrides/*"]&docs_dir=docs/es/&config=config/es/mkdocs.yml'
-  - Riverlabs: '!import https://github.com/ICHydro/Riverlabs?branch=migrate-docs&extra_imports=["overrides/*"]&docs_dir=docs/es/&config=config/es/mkdocs.yml'
+  - Riverlabs: '!import https://github.com/ICHydro/Riverlabs?branch=main&extra_imports=["overrides/*"]&docs_dir=docs/es/&config=config/es/mkdocs.yml'
